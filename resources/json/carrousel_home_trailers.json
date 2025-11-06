@@ -1,0 +1,12 @@
+[
+    {
+        "path_video": "resources/videos/trailers/trailer12.mp4",
+        "logo": "resources/img/dating_killmulator/logo/logo_vermell.png",
+        "redireccio": ""
+    },
+    {
+        "path_video": "resources/videos/trailers/midlander.mp4",
+        "logo": "resources/img/midlander/logo/logo.png",
+        "redireccio": ""
+    }
+]
