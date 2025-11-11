@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: #0280ff;
+html{
+    background-color: #69b4ff;
 }
 
 /* -------------------------- NAV -------------------------- */
@@ -77,105 +77,6 @@ nav {
     z-index: 2;
 }
 
-/* -------------------------------------- MAIN --------------------------------------- */
-
-/* -------------------------- CARROUSEL -------------------------- */
-.carrousel {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    margin-top: -45px;
-    margin-bottom: -220px;
-    z-index: 1;
-    /* debajo del nav */
-    background-color: black;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 100%;
-    opacity: 0;
-    transition: all 0.7s ease;
-}
-
-.slide.active {
-    left: 0;
-    opacity: 1;
-}
-
-video {
-    width: 100%;
-    object-fit: cover;
-}
-
-.logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px;
-    z-index: 2;
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
-    border: none;
-    cursor: pointer;
-    z-index: 15;
-    padding: 10px 15px;
-    transition: background 0.3s;
-}
-
-.arrow.left {
-    left: 10px;
-}
-
-.arrow.right {
-    right: 10px;
-}
-
-.arrow:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/* -------------------------- HOLA -------------------------- */
-.casa {
-    width: 100%;
-    height: 300px;
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    z-index: 5;
-
-}
-
-.hola-som-coolom {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 120px auto;
-    gap: 50px;
-    width: 30%;
-    text-align: center;
-}
-
-.hola-som-coolom img {
-    height: 120px;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-}
 
 /* -------------------------- NEWSLETTER -------------------------- */
 .newsletter {
