@@ -109,7 +109,8 @@ video {
 .hola-som-coolom {
     width: 85%;
     max-width: 1200px;
-    margin: 150px auto;
+    justify-self: center;
+    margin-top: 250px; 
     padding: 80px 60px;
     display: flex;
     flex-direction: column;
@@ -316,7 +317,7 @@ video {
     position: relative;
     width: 100%;
     max-width: 1500px;
-    margin: 0 auto;
+    margin-top: 80px;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -328,7 +329,6 @@ video {
     overflow: hidden;
     border-radius: 20px;
     position: relative;
-    padding: 80px 0;
     max-width: 100%;
     margin: 0 auto;
 }

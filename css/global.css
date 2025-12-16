@@ -25,6 +25,7 @@ nav {
 }
 
 .botones-nav button {
+    font-family: 'Nunito';
     border: none;
     background: transparent;
     color: white;
@@ -131,7 +132,8 @@ nav {
 .newsletter {
     width: 90%;
     max-width: 1400px;
-    margin: 80px auto;
+    justify-self: center ;
+    margin-top: 80px; 
     background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
     border-radius: 30px;
     padding: 60px 80px;
@@ -331,6 +333,8 @@ nav {
 
 footer {
     width: 100%;
+        margin-top: 80px; 
+
     background: #333333;
     padding: 50px 40px 30px;
     color: white;
