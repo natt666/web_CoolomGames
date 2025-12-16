@@ -18,7 +18,6 @@ html {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    margin-top: -50px; 
     margin-bottom: -70px;
     z-index: 0;
     /* debajo del nav */
@@ -47,7 +46,7 @@ video {
 
 .logo {
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     width: 450px;
@@ -109,7 +108,8 @@ video {
 .hola-som-coolom {
     width: 85%;
     max-width: 1200px;
-    margin: 150px auto;
+    justify-self: center;
+    margin-top: 250px; 
     padding: 80px 60px;
     display: flex;
     flex-direction: column;
@@ -316,7 +316,7 @@ video {
     position: relative;
     width: 100%;
     max-width: 1500px;
-    margin: 0 auto;
+    margin-top: 80px;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -328,7 +328,6 @@ video {
     overflow: hidden;
     border-radius: 20px;
     position: relative;
-    padding: 80px 0;
     max-width: 100%;
     margin: 0 auto;
 }
