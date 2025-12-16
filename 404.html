@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    
+    <link rel="stylesheet" href="global.css">
+
+    <style>
+        /* Estils exclusius per a la pàgina d'error (per centrar el contingut) */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif; /* Per si global.css no carrega la font */
+        }
+
+        /* Això fa que el footer es quedi abaix i l'error al mig */
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f8f9fa; /* Color de fons suau per l'error */
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: #007bff; /* Blau estàndard (el teu global.css pot canviar-ho) */
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin: 10px 0 20px 0;
+            color: #333;
+        }
+
+        .error-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+
+        .home-button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav style="background-color: #007bff; padding: 15px; text-align: center;">
+            <a href="games.html" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold;">Games</a>
+            <a href="about.html" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold;">About</a>
+            <a href="https://datingkillmulator.store/" target="_blank" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold;">Merch</a>
+            <a href="contact.html" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold;">Contact</a>
+            <a href="blog.html" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold;">Blog</a>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-description">
+            Oops! The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+        </p>
+        
+        <a href="home.html" class="home-button">Go Back Home</a>
+    </div>
+
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
+        <p>&copy; 2025 Dating Killmulator. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

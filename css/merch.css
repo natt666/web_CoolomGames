@@ -1,123 +1,88 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* =========================================
+   ESTILS ESPECÍFICS DE MERCH
+   (El reset i el nav venen de global.css)
+   ========================================= */
 
-html{
-    background-color: #69b4ff;
-}
 
-/* -------------------------- NAV -------------------------- */
-nav {
-    width: 100%;
+/* Contenidor Principal (Targeta Central) */
+.merch-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 100px auto; /* Marge negatiu per integrar amb el banner/núvols */
+    padding: 80px 40px;
+    background-color: #f7fdff;
+    border-radius: 40px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 10;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    background-color: #0280ff;
+    align-items: center;
+    gap: 30px;
 }
 
-.botones-nav a {
-    text-decoration: none;
+.merch-title {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 56px;
+    color: #0280ff;
+    margin: 0;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+    line-height: 1.1;
 }
 
-.botones-nav button {
-    font-family: 'Nunito', Times New Roman;
-    border: none;
-    background: transparent;
+.merch-intro {
+    font-size: 20px;
+    color: #555;
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Àrea del Botó */
+.store-cta {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.store-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
     color: white;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    font-weight:500;
-}
-
-.botones-nav button:hover {
-    color: #004b97;
-    font-weight: 900;
-}
-
-.navegador {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding: 0 40px 0 30px;
-    height: 56px;
-    z-index: 9;
-}
-
-.logo-nav {
-    font-family: "Lilita One", Times New Roman;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: -20px;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-nav img {
-    box-sizing: border-box;
-    height: 50px;
-
-}
-
-.logo-link {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 28px; /* Més gran que els botons normals */
+    padding: 20px 60px;
+    border-radius: 60px;
     text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: end;
-
-}
-/* -------------------------- BANNER -------------------------- */
-.banner-nav {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    z-index: 2;
+    letter-spacing: 1.5px;
+    box-shadow: 0 15px 40px rgba(2, 128, 255, 0.4);
+    transition: all 0.3s ease;
+    border: 4px solid transparent;
 }
 
-
-/* -------------------------- NEWSLETTER -------------------------- */
-.newsletter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 90px;
-    background-color: #333;
-    margin-bottom: 40px;
-    color: #f7fdff;
+.store-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(2, 128, 255, 0.6);
+    background: white;
+    color: #0280ff;
+    border-color: #0280ff;
 }
 
-.newsletter img {
-    height: 80%;
-}
+/* Responsive */
+@media (max-width: 768px) {
+    .merch-container {
+        padding: 50px 20px;
+        margin-top: 40px; /* Reset del marge negatiu en mòbil si cal */
+    }
 
-.newsletter form {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
+    .merch-title {
+        font-size: 42px;
+    }
 
-/* -------------------------- FOOTER -------------------------- */
-footer {
-    height: 56px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0280ff;
-    padding: 0 20px;
-}
-
-footer img {
-    height: 50px;
-}
-
-.xarxes-socials img {
-    height: 40px;
-    padding-left: 10px;
+    .store-button {
+        font-size: 22px;
+        padding: 15px 40px;
+    }
 }

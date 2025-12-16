@@ -1,123 +1,162 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================
+   ESTILS ESPECÍFICS DE CONTACTE
+   (El reset i el nav venen de global.css)
+   ========================================= */
+
+/* Decoració de núvols (opcional, ajustada per a aquesta pàgina) */
+
+/* Contenidor Principal (estil tipus 'Card' com a Home) */
+.contact-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 80px auto; /* Marge negatiu per pujar sobre núvols/fons */
+    padding: 60px;
+    background-color: #f7fdff;
+    border-radius: 40px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 10;
+    text-align: center;
 }
 
-html{
-    background-color: #69b4ff;
+.contact-title {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 56px;
+    color: #0280ff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
 
-/* -------------------------- NAV -------------------------- */
-nav {
-    width: 100%;
+.contact-intro {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Layout Grid per Formulari i Info */
+.contact-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    text-align: left;
+}
+
+/* --- ESTILS DEL FORMULARI --- */
+.contact-form {
     display: flex;
     flex-direction: column;
-    background-color: #0280ff;
-}
-
-.botones-nav a {
-    text-decoration: none;
-}
-
-.botones-nav button {
-    font-family: 'Nunito', Times New Roman;
-    border: none;
-    background: transparent;
-    color: white;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    font-weight:500;
-}
-
-.botones-nav button:hover {
-    color: #004b97;
-    font-weight: 900;
-}
-
-.navegador {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding: 0 40px 0 30px;
-    height: 56px;
-    z-index: 9;
-}
-
-.logo-nav {
-    font-family: "Lilita One", Times New Roman;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: -20px;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-nav img {
-    box-sizing: border-box;
-    height: 50px;
-
-}
-
-.logo-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: end;
-
-}
-/* -------------------------- BANNER -------------------------- */
-.banner-nav {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    z-index: 2;
-}
-
-
-/* -------------------------- NEWSLETTER -------------------------- */
-.newsletter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 90px;
-    background-color: #333;
-    margin-bottom: 40px;
-    color: #f7fdff;
-}
-
-.newsletter img {
-    height: 80%;
-}
-
-.newsletter form {
-    display: flex;
-    flex-direction: row;
     gap: 20px;
 }
 
-/* -------------------------- FOOTER -------------------------- */
-footer {
-    height: 56px;
-    width: 100%;
+.form-group {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0280ff;
-    padding: 0 20px;
+    flex-direction: column;
+    gap: 8px;
 }
 
-footer img {
-    height: 50px;
+.form-group label {
+    font-family: 'Lilita One', sans-serif;
+    color: #0280ff;
+    font-size: 18px;
+    letter-spacing: 0.5px;
 }
 
-.xarxes-socials img {
-    height: 40px;
-    padding-left: 10px;
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 2px solid #e0efff;
+    background-color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0280ff;
+    box-shadow: 0 0 0 4px rgba(2, 128, 255, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(2, 128, 255, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(2, 128, 255, 0.4);
+}
+
+/* --- INFORMACIÓ LATERAL --- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 30px;
+    border-left: 2px solid rgba(2, 128, 255, 0.1);
+    padding-left: 40px;
+}
+
+.info-item h3 {
+    font-family: 'Lilita One', sans-serif;
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info {
+        border-left: none;
+        border-top: 2px solid rgba(2, 128, 255, 0.1);
+        padding-left: 0;
+        padding-top: 40px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-container {
+        padding: 40px 20px;
+        width: 95%;
+        margin-top: 40px;
+    }
+
+    .contact-title {
+        font-size: 42px;
+    }
 }
