@@ -1,60 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coolom Games | Games</title>
-    <link rel="stylesheet" href="/css/games.css">
-    <link rel="stylesheet" href="/css/global.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="icon" href="resources\img\coolom_games\logo\logo_blanco.png" type="image/png">
-  </head>
-  <body>
-    
-<nav>
-  <div class="navegador">
-    <a href="home.html" class="logo-link">
-      <div class="logo-nav">
-        <img src="resources/img/coolom_games/logo/logo_color.png" alt="Logo Coolom C">
-        <h1>COOLOM GAMES</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coolom Games | Our Games</title>
+  <link rel="stylesheet" href="/css/games.css">
+  <link rel="stylesheet" href="/css/global.css">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="resources/img/coolom_games/logo/logo_blanco.png" type="image/png">
+</head>
+
+<body>
+  <nav>
+    <div class="navegador">
+      <a href="home.html" class="logo-link">
+        <div class="logo-nav">
+          <img src="resources/img/coolom_games/logo/logo_color.png" alt="Logo Coolom C">
+          <h1>COOLOM GAMES</h1>
+        </div>
+      </a>
+
+      <div class="botones-nav">
+        <a href="games.html"><button style="color: #004b97; font-weight: 900;" data-text="Games">Games</button></a>
+        <a href="about.html"><button data-text="About">About</button></a>
+        <a href="merch.html"><button data-text="Merch">Merch</button></a>
+        <a href="contact.html"><button data-text="Contact">Contact</button></a>
+        <a href="blog.html"><button data-text="Blog">Blog</button></a>
       </div>
-    </a>
-
-    <div class="botones-nav">
-      <a href="games.html"><button>Games</button></a>
-      <a href="about.html"><button>About</button></a>
-      <a href="merch.html"><button>Merch</button></a>
-      <a href="contact.html"><button>Contact</button></a>
     </div>
-  </div>
 
-<div class="banner-wrap">
+    <div class="banner-wrap">
       <img src="resources/img/coolom_games/navegador/banner.svg" class="banner-nav">
     </div>
-</nav>
+  </nav>
 
-    </div>
-    <div class="newsletter">
-      <img src="resources/img/coolom_games/logo/logo_blanco.png">
-      <div>
-        <p>Sign up for the newsletter so you don't miss anything and stay up to date!</p>
+  <main class="games-main">
+    <!-- Hero Section -->
+    <section class="games-hero">
+      <div class="games-hero-content">
+        <img src="resources/img/coolom_games/logo/logo_color.png" alt="Decoration" class="hero-decoration">
+        <h1>Our Creations</h1>
+        <p>Check out our amazing games! We create unique experiences with personality and heart, from killer dating sims to whimsical adventures. Each game tells a different story, but they all share our passion for creativity and fun.</p>
+      </div>
+    </section>
+
+    <!-- Games Grid -->
+    <section class="games-grid-section">
+      <div class="games-list">
+        
+        <!-- Dating Killmulator -->
+        <div class="game-item">
+          <div class="game-image-wrapper">
+            <img src="resources/img/dating_killmulator/landing_page/dating_lp_img.png" alt="Dating Killmulator">
+          </div>
+          <div class="game-info">
+            <img src="resources/img/dating_killmulator/logo/logo_vermell.png" alt="Dating Killmulator Logo" class="game-info-logo">
+            <p class="game-description">A darkly comedic dating simulator where you navigate romance with some rather... deadly suitors. Swipe right at your own risk in this thrilling blend of visual novel and survival horror!</p>
+            <a href="https://coolom-games.itch.io/datingkillmulator" target="_blank" rel="noopener noreferrer" class="game-link">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Patufet -->
+        <div class="game-item reverse">
+          <div class="game-image-wrapper">
+            <img src="resources/img/patufet/landing_page/patufet_lp_img.png" alt="Patufet">
+          </div>
+          <div class="game-info">
+            <p class="game-description">An enchanting adventure inspired by Catalan folklore. Guide the tiny hero Patufet through a magical world filled with puzzles, charm, and endless replayability!</p>
+            <a href="https://coolom-games.itch.io/enpatufettornaacasa" target="_blank" rel="noopener noreferrer" class="game-link">Learn More →</a>
+          </div>
+        </div>
+
+        <!-- Midlander -->
+        <div class="game-item">
+          <div class="game-image-wrapper">
+            <img src="resources/img/midlander/landing_page/midlander_lp_img.png" alt="Midlander">
+          </div>
+          <div class="game-info">
+            <img src="resources/img/midlander/logo/logo.png" alt="Midlander Logo" class="game-info-logo">
+            <p class="game-description">Explore mysterious lands in this atmospheric adventure. Discover secrets, solve puzzles, and uncover the truth in a beautifully crafted world.</p>
+            <a href="http://coolom-games.itch.io/midlander" target="_blank" rel="noopener noreferrer" class="game-link">Learn More →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Merch Button -->
+    <section class="merch-button-section">
+      <a href="merch.html" class="merch-button">Buy Merch!</a>
+    </section>
+  </main>
+
+  <div class="newsletter">
+    <div class="newsletter-wrapper">
+      <div class="newsletter-icon">
+        <img src="resources/img/coolom_games/logo/logo_blanco.png" alt="Logo">
+      </div>
+      <div class="newsletter-content">
+        <h2>Stay in the Loop!</h2>
+        <p>Subscribe to our newsletter and be the first to know about new games, updates, and exclusive content!</p>
         <form>
-          <input type="text" id="mail" name="mail" placeholder="Your Email"><br>
-          <input type="submit" value="Submit">
+          <input type="text" id="mail" name="mail" placeholder="Enter your email address">
+          <input type="submit" value="Subscribe" class="custom-submit">
         </form>
       </div>
     </div>
+  </div>
 
-    <footer>
-      <p>© 2025 Coolom Games. All rights reserved.</p>
-      <img src="resources/img/coolom_games/logo/logo_blanco.png" alt="Logo Coolom B">
-      <div class="xarxes-socials">
-        <a href="https://www.tiktok.com/@coolomgames" target="_blank"><img src="resources/img/coolom_games/xarxes_socials/tiktok_logo.png" alt="Tiktok"></a>
-        <a href="https://x.com/CoolomGames" target="_blank"><img src="/resources/img/coolom_games/xarxes_socials/x_logo.png" alt="X"></a>
-        <a href="https://www.youtube.com/@CoolomGames" target="_blank"><img src="resources/img/coolom_games/xarxes_socials/youtube_logo.png" alt="Youtube"></a>
-        <a href="https://coolom-games.itch.io/" target="_blank"><img src="resources/img/coolom_games/xarxes_socials/itchio_logo.png" alt=""></a>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="home.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="about.html">About</a>
+        <a href="merch.html">Merch</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
       </div>
-    </footer>     
-  </body>
+
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="xarxes-socials">
+          <a href="https://www.tiktok.com/@coolomgames" target="_blank" title="TikTok">
+            <img src="resources/img/coolom_games/xarxes_socials/tiktok_logo.png" alt="Tiktok">
+          </a>
+          <a href="https://x.com/CoolomGames" target="_blank" title="X (Twitter)">
+            <img src="resources/img/coolom_games/xarxes_socials/x_logo.png" alt="X">
+          </a>
+          <a href="https://www.youtube.com/@CoolomGames" target="_blank" title="YouTube">
+            <img src="resources/img/coolom_games/xarxes_socials/youtube_logo.png" alt="Youtube">
+          </a>
+          <a href="https://coolom-games.itch.io/" target="_blank" title="Itch.io">
+            <img src="resources/img/coolom_games/xarxes_socials/itchio_logo.png" alt="Itch.io">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Coolom Games. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
 </html>

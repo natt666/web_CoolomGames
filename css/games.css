@@ -4,120 +4,338 @@
     box-sizing: border-box;
 }
 
-html{
-    background-color: #69b4ff;
+.games-main {
+    background: linear-gradient(180deg, #006ad5 0%, #0280ff 100%);
+    min-height: 100vh;
 }
 
-/* -------------------------- NAV -------------------------- */
-nav {
+/* -------------------------- HERO SECTION -------------------------- */
+.games-hero {
     width: 100%;
+    padding: 100px 40px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.games-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.games-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    background-color: #0280ff;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
 }
 
-.botones-nav a {
-    text-decoration: none;
+.hero-decoration {
+    height: 120px;
+    width: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
 }
 
-.botones-nav button {
-    font-family: 'Nunito', Times New Roman;
-    border: none;
-    background: transparent;
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.games-hero h1 {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 64px;
     color: white;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    font-weight:500;
+    text-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 8px 40px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
 }
 
-.botones-nav button:hover {
-    color: #004b97;
-    font-weight: 900;
+.games-hero p {
+    font-size: 20px;
+    color: white;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 700px;
 }
 
-.navegador {
-    width: 100%;
+/* -------------------------- GAMES LIST -------------------------- */
+.games-grid-section {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px 100px;
+}
+
+.games-list {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-    padding: 0 40px 0 30px;
-    height: 56px;
-    z-index: 9;
+    flex-direction: column;
+    gap: 100px;
 }
 
-.logo-nav {
-    font-family: "Lilita One", Times New Roman;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: -20px;
+.game-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
-    gap: 10px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
 }
 
-.logo-nav img {
-    box-sizing: border-box;
-    height: 50px;
+.game-item:nth-child(1) { animation-delay: 0.1s; }
+.game-item:nth-child(2) { animation-delay: 0.2s; }
+.game-item:nth-child(3) { animation-delay: 0.3s; }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.logo-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: end;
-
+.game-item.reverse {
+    direction: rtl;
 }
-/* -------------------------- BANNER -------------------------- */
-.banner-nav {
+
+.game-item.reverse > * {
+    direction: ltr;
+}
+
+.game-image-wrapper {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+}
+
+.game-image-wrapper:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(2, 128, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.game-image-wrapper img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: 2;
+    transition: transform 0.4s ease;
 }
 
+.game-image-wrapper:hover img {
+    transform: scale(1.05);
+}
 
-/* -------------------------- NEWSLETTER -------------------------- */
-.newsletter {
+.game-info {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 90px;
-    background-color: #333;
-    margin-bottom: 40px;
-    color: #f7fdff;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.newsletter img {
-    height: 80%;
+.game-info-logo {
+    max-height: 120px;
+    width: auto;
+    max-width: 350px;
+    object-fit: contain;
+    align-self: flex-start;
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.2));
 }
 
-.newsletter form {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+.game-description {
+    font-size: 18px;
+    line-height: 1.8;
+    color: white;
+    opacity: 0.95;
 }
 
-/* -------------------------- FOOTER -------------------------- */
-footer {
-    height: 56px;
+.game-link {
+    background: white;
+    color: #0280ff;
+    font-family: 'Nunito', 'Times New Roman';
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.2),
+        inset 0 -2px 10px rgba(0, 0, 0, 0.1),
+        inset 0 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+.game-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        inset 0 -2px 10px rgba(0, 0, 0, 0.15),
+        inset 0 2px 15px rgba(255, 255, 255, 0.9);
+}
+
+.game-link:active {
+    transform: translateY(-1px) scale(1.03);
+}
+
+/* -------------------------- MERCH BUTTON -------------------------- */
+.merch-button-section {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0280ff;
-    padding: 0 20px;
+    justify-content: center;
+    padding: 40px 40px 80px;
 }
 
-footer img {
-    height: 50px;
+.merch-button {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #0280ff;
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 24px;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 -2px 10px rgba(0, 0, 0, 0.1),
+        inset 0 2px 10px rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
 }
 
-.xarxes-socials img {
-    height: 40px;
-    padding-left: 10px;
+.merch-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(2, 128, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.merch-button:hover::before {
+    left: 100%;
+}
+
+.merch-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        inset 0 -2px 10px rgba(0, 0, 0, 0.15),
+        inset 0 2px 15px rgba(255, 255, 255, 0.9);
+}
+
+.merch-button:active {
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* -------------------------- RESPONSIVE -------------------------- */
+@media (max-width: 968px) {
+    .games-hero {
+        padding: 80px 30px 60px;
+    }
+    
+    .games-hero h1 {
+        font-size: 52px;
+    }
+    
+    .games-hero p {
+        font-size: 18px;
+    }
+    
+    .hero-decoration {
+        height: 100px;
+    }
+    
+    .games-grid-section {
+        width: 95%;
+        padding: 60px 30px 80px;
+    }
+    
+    .games-list {
+        gap: 80px;
+    }
+    
+    .game-item {
+        gap: 40px;
+    }
+    
+    .game-image-wrapper {
+        height: 350px;
+    }
+}
+
+@media (max-width: 640px) {
+    .games-hero {
+        padding: 60px 20px 50px;
+    }
+    
+    .games-hero h1 {
+        font-size: 42px;
+    }
+    
+    .games-hero p {
+        font-size: 16px;
+    }
+    
+    .hero-decoration {
+        height: 80px;
+    }
+    
+    .games-grid-section {
+        padding: 60px 20px 80px;
+    }
+    
+    .games-list {
+        gap: 60px;
+    }
+    
+    .game-item,
+    .game-item.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 30px;
+    }
+    
+    .game-image-wrapper {
+        height: 300px;
+    }
+    
+    .game-description {
+        font-size: 16px;
+    }
+    
+    .game-link {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
 }
