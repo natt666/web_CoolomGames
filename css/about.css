@@ -4,6 +4,531 @@
     box-sizing: border-box;
 }
 
-html{
-    background-color: #69b4ff;
+.about-main {
+    background-color: #0280ff;
+    min-height: 100vh;
+}
+
+/* -------------------------- HERO SECTION -------------------------- */
+.about-hero {
+    width: 100%;
+    padding: 120px 40px 80px;
+    background: linear-gradient(180deg, #0280ff 0%, #006ad5 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.about-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-hero h1 {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 72px;
+    color: white;
+    text-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 8px 40px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+.hero-logo {
+    height: 180px;
+    width: auto;
+    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.3));
+    animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* -------------------------- STORY TIMELINE -------------------------- */
+.story-section {
+    width: 100%;
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #006ad5 0%, #0280ff 100%);
+}
+
+.story-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.story-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, 
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 10%,
+        rgba(255, 255, 255, 0.3) 90%,
+        transparent 100%);
+    transform: translateX(-50%);
+}
+
+.story-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.story-item:nth-child(odd) .story-year {
+    grid-column: 1;
+    text-align: right;
+}
+
+.story-item:nth-child(odd) .story-content {
+    grid-column: 2;
+    text-align: left;
+}
+
+.story-item:nth-child(even) .story-year {
+    grid-column: 2;
+    text-align: left;
+}
+
+.story-item:nth-child(even) .story-content {
+    grid-column: 1;
+    text-align: right;
+}
+
+.story-year {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 64px;
+    color: white;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.story-item:nth-child(even) .story-year {
+    justify-content: flex-start;
+}
+
+.story-year::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 0 6px #0280ff,
+        0 0 0 10px rgba(255, 255, 255, 0.3),
+        0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.story-item:nth-child(odd) .story-year::after {
+    right: -42px;
+}
+
+.story-item:nth-child(even) .story-year::after {
+    left: -42px;
+}
+
+.story-content {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.story-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.story-content h3 {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 32px;
+    color: #0280ff;
+    margin-bottom: 15px;
+}
+
+.story-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* -------------------------- ACHIEVEMENTS -------------------------- */
+.achievements-section {
+    width: 100%;
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #0280ff 0%, #006ad5 100%);
+}
+
+.section-title {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 56px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section-subtitle {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.achievements-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.achievement-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+.achievement-card h3 {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 24px;
+    color: #0280ff;
+    margin-bottom: 10px;
+}
+
+.achievement-year {
+    font-size: 16px;
+    font-weight: 700;
+    color: #006ad5;
+    margin-bottom: 10px;
+}
+
+.achievement-card p:last-child {
+    font-size: 16px;
+    color: #666;
+}
+
+/* -------------------------- TEAM SECTION -------------------------- */
+.team-section {
+    width: 100%;
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #006ad5 0%, #0280ff 100%);
+}
+
+.team-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.team-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.team-image-container {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #60afff 0%, #0280ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.1);
+}
+
+.team-placeholder {
+    font-size: 120px;
+    color: white;
+    font-weight: 700;
+    font-family: 'Lilita One', 'Times New Roman';
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.team-info {
+    padding: 30px;
+}
+
+.team-role {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0280ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.team-name {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.team-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.team-bio {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.team-card-empty {
+    border: 3px dashed rgba(2, 128, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.team-card-empty:hover {
+    border-color: rgba(2, 128, 255, 0.6);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* -------------------------- FAQ SECTION -------------------------- */
+.faq-section {
+    width: 100%;
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #0280ff 0%, #006ad5 100%);
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 20px;
+    padding: 35px 40px;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.faq-question {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 24px;
+    color: #0280ff;
+    margin-bottom: 15px;
+}
+
+.faq-answer {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* -------------------------- RESPONSIVE -------------------------- */
+@media (max-width: 968px) {
+    .about-hero h1 {
+        font-size: 56px;
+    }
+    
+    .hero-logo {
+        height: 140px;
+    }
+    
+    .story-container::before {
+        left: 30px;
+    }
+    
+    .story-item {
+        grid-template-columns: 80px 1fr;
+        gap: 30px;
+    }
+    
+    .story-item:nth-child(odd) .story-year,
+    .story-item:nth-child(even) .story-year {
+        grid-column: 1;
+        text-align: left;
+        font-size: 48px;
+        justify-content: flex-start;
+    }
+    
+    .story-item:nth-child(odd) .story-content,
+    .story-item:nth-child(even) .story-content {
+        grid-column: 2;
+        text-align: left;
+    }
+    
+    .story-year::after {
+        right: auto !important;
+        left: -37px !important;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .about-hero {
+        padding: 80px 20px 60px;
+    }
+    
+    .about-hero h1 {
+        font-size: 42px;
+    }
+    
+    .hero-logo {
+        height: 100px;
+    }
+    
+    .story-section,
+    .achievements-section,
+    .team-section,
+    .faq-section {
+        padding: 60px 20px;
+    }
+    
+    .section-title {
+        font-size: 42px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .story-item {
+        grid-template-columns: 60px 1fr;
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .story-year {
+        font-size: 36px;
+    }
+    
+    .story-content {
+        padding: 20px 25px;
+    }
+    
+    .story-content h3 {
+        font-size: 24px;
+    }
+    
+    .story-content p {
+        font-size: 16px;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .faq-item {
+        padding: 25px 25px;
+    }
+    
+    .faq-question {
+        font-size: 20px;
+    }
+    
+    .faq-answer {
+        font-size: 16px;
+    }
 }
