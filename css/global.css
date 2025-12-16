@@ -128,7 +128,8 @@ nav {
 }
 
 .banner-nav {
-  width: 110%;        /* ← zoom horizontal para comerse el espacio extra */
+  width: 110%;    
+  overflow: hidden;    /* ← zoom horizontal para comerse el espacio extra */
   height: 100%;
   object-fit: cover;
   display: block;
