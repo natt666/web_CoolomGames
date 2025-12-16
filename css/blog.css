@@ -199,15 +199,22 @@ html {
     color: #0280ff;
 }
 
-/* BOTÓ PATREON (Article 1) */
-.patreon-cta-container {
+/* =========================================
+   BOTONS D'ACCIO (CTA) UNIFICATS
+   ========================================= */
+
+/* Contenidors per centrar */
+.patreon-cta-container,
+.website-cta-container {
     display: flex;
     justify-content: center;
     margin: 40px 0;
 }
 
-.patreon-button {
-    background-color: #FF424D;
+/* Estil UNIFICAT per a tots els botons (Color Patreon #FF424D) */
+.patreon-button,
+.website-button {
+    background-color: #FF424D; /* Color vermell Patreon per a tots */
     color: white;
     font-family: 'Lilita One', 'Times New Roman';
     font-size: 20px;
@@ -215,15 +222,18 @@ html {
     border-radius: 50px;
     text-decoration: none;
     letter-spacing: 1px;
-    box-shadow: 0 10px 25px rgba(255, 66, 77, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 66, 77, 0.3); /* Ombra vermella */
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: inline-block; /* Assegura que agafi bé el padding */
 }
 
-.patreon-button:hover {
+/* Efecte Hover UNIFICAT */
+.patreon-button:hover,
+.website-button:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(255, 66, 77, 0.5);
+    box-shadow: 0 15px 35px rgba(255, 66, 77, 0.5); /* Ombra vermella més intensa */
     background-color: white;
-    color: #FF424D;
-    border: 2px solid #FF424D;
+    color: #FF424D; /* Text vermell al passar el ratolí */
+    border: 2px solid #FF424D; /* Vora vermella */
 }
