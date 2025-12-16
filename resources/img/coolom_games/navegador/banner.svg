@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_3" data-name="Capa 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1289.55 24.48">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #005fad;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #0280ff;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" y="-.08" width="1289.55" height="24.56"/>
+    </clipPath>
+  </defs>
+  <g class="cls-4">
+    <rect class="cls-1" x="0" y="-.04" width="1289.55" height="24.48"/>
+    <polygon class="cls-3" points="0 24.48 1289.55 15.88 1289.55 -.08 0 -.08 0 24.48"/>
+  </g>
+</svg>
