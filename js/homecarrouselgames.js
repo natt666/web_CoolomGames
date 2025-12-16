@@ -104,19 +104,6 @@ function initCarousel() {
         }
     });
     
-    // Auto-play (opcional)
-    setInterval(() => {
-        currentIndex++;
-        updateCarousel();
-        
-        if (currentIndex >= totalOriginal * 2) {
-            setTimeout(() => {
-                currentIndex = totalOriginal;
-                updateCarousel(false);
-            }, 600);
-        }
-    }, 4000);
-    
     // Responsive
     window.addEventListener('resize', () => updateCarousel(false));
     
