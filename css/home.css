@@ -12,75 +12,21 @@ html {
 
 /* -------------------------------------- MAIN --------------------------------------- */
 
-/* -------------------------- CARROUSEL -------------------------- */
-.carrousel {
+/* -------------------------- HERO IMAGE -------------------------- */
+.hero-image {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
     margin-bottom: -70px;
     z-index: 0;
-    /* debajo del nav */
-    background-color: black;
 }
 
-.slide {
-    position: absolute;
+.hero-image img {
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 100%;
-    opacity: 0;
-    transition: all 0.7s ease;
-}
-
-.slide.active {
-    left: 0;
-    opacity: 1;
-}
-
-video {
-    width: 100%;
     object-fit: cover;
-}
-
-.logo {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 450px;
-    z-index: 2;
-      filter: drop-shadow(0 0 40px rgba(0, 0, 0, 1))
-            drop-shadow(0 0 80px rgba(0, 0, 0, 0.9))
-            drop-shadow(0 0 120px rgba(0, 0, 0, 0.7))
-            drop-shadow(0 0 160px rgba(0, 0, 0, 0.5));
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
-    border: none;
-    cursor: pointer;
-    z-index: 15;
-    padding: 10px 15px;
-    transition: background 0.3s;
-}
-
-.arrow.left {
-    left: 10px;
-}
-
-.arrow.right {
-    right: 10px;
-}
-
-.arrow:hover {
-    background: rgba(0, 0, 0, 0.7);
+    display: block;
 }
 
 /* -------------------------- HOLA -------------------------- */
@@ -181,7 +127,7 @@ video {
     font-family: 'Lilita One', 'Times New Roman';
     font-size: 64px;
     font-weight: normal;
-    background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
+    background: #006ad5 ;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -202,11 +148,12 @@ video {
     z-index: 0;
 }
 .hola-som-coolom a {
-    background-color: #004b97;
+    background-color: #006ad5;
     background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
     background-size: 250px;
     background-repeat: repeat;
     background-blend-mode: overlay;
+    background-position: center;
     opacity: 1;
     color: white;
     font-weight: 700;
@@ -217,7 +164,7 @@ video {
     border-radius: 50px;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-size 0.5s ease;
     
     position: relative;
     z-index: 1;
@@ -253,7 +200,7 @@ video {
 
 .hola-som-coolom a:hover {
     transform: translateY(-3px) scale(1.05);
-
+    background-size: 300px;
 }
 
 .hola-som-coolom a:active {
@@ -368,9 +315,9 @@ video {
 }
 
 .carousel-arrow {
-    background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
+    background:  #0280ff;
     color: white;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border:  #0280ff;
     font-size: 28px;
     width: 70px;
     height: 70px;
@@ -379,10 +326,6 @@ video {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 10;
     flex-shrink: 0;
-    box-shadow: 
-        0 8px 25px rgba(0, 16, 31, 0.4),
-        inset 0 -3px 10px rgba(0, 0, 0, 0.2),
-        inset 0 3px 10px rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -397,7 +340,6 @@ video {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s ease;
 }
 
@@ -406,20 +348,12 @@ video {
 }
 
 .carousel-arrow:hover {
-    background: linear-gradient(135deg, #006ad5 0%, #004b97 100%);
     transform: scale(1.2) rotate(10deg);
-    box-shadow: 
-        0 12px 35px rgba(2, 128, 255, 0.6),
-        inset 0 -3px 10px rgba(0, 0, 0, 0.3),
-        inset 0 3px 15px rgba(255, 255, 255, 0.4);
     border-color: rgba(255, 255, 255, 0.5);
 }
 
 .carousel-arrow:active {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 
-        0 5px 15px rgba(2, 128, 255, 0.5),
-        inset 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .game-title {
