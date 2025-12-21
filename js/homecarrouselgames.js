@@ -3,17 +3,20 @@ const games = [
     {
         image: 'resources/img/dating_killmulator/landing_page/dating_lp_img.png',
         title: 'Dating Killmulator',
-        alt: 'Dating Killmulator'
+        alt: 'Dating Killmulator',
+        link: 'https://coolom-games.itch.io/datingkillmulator'
     },
     {
         image: 'resources/img/midlander/landing_page/midlander_lp_img.png',
         title: 'Midlander',
-        alt: 'Midlander'
+        alt: 'Midlander',
+        link: 'http://coolom-games.itch.io/midlander'
     },
     {
         image: 'resources/img/en_patufet_torna_a_casa/landing_page/patufet_lp_img.png',
         title: 'En patufet torna a casa',
-        alt: 'En patufet torna a casa'
+        alt: 'En patufet torna a casa',
+        link: 'https://coolom-games.itch.io/enpatufettornaacasa'
     }
 ];
 
@@ -42,7 +45,10 @@ function createCarousel() {
     
     // Crear slides
     extendedGames.forEach(game => {
-        const slide = document.createElement('div');
+        const slide = document.createElement('a');
+        slide.href = game.link;
+        slide.target = '_blank';
+        slide.rel = 'noopener noreferrer';
         slide.className = 'carousel-slide';
         slide.innerHTML = `
             <img src="${game.image}" alt="${game.alt}">
@@ -65,9 +71,9 @@ function initCarousel() {
     let currentIndex = games.length; // Empezar en la segunda copia
     const totalOriginal = games.length;
     
-  const getSlideWidth = () => {
-    return slides[0].offsetWidth + 100; // ancho + gap de 50px
-};
+    const getSlideWidth = () => {
+        return slides[0].offsetWidth + 50; // ancho + gap de 50px
+    };
     
     function updateCarousel(smooth = true) {
         if (!smooth) {
