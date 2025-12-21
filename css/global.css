@@ -10,6 +10,13 @@ html {
 
 }
 
+body {
+    background-image: url('../resources/ui/casa/bricks.png');
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: 0 0;
+}
+
 /* -------------------------- NAV -------------------------- */
 nav {
     width: 100%;

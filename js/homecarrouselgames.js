@@ -11,9 +11,9 @@ const games = [
         alt: 'Midlander'
     },
     {
-        image: 'resources/img/patufet/landing_page/patufet_lp_img.png',
-        title: 'Patufet',
-        alt: 'Patufet'
+        image: 'resources/img/en_patufet_torna_a_casa/landing_page/patufet_lp_img.png',
+        title: 'En patufet torna a casa',
+        alt: 'En patufet torna a casa'
     }
 ];
 
