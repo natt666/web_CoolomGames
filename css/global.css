@@ -15,9 +15,11 @@ nav {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #0280ff;
+    background: transparent;       /* Aseguramos que sea transparente */
+    overflow: visible;             /* Cambia a visible para que el banner no se corte mal */
     position: relative;
     z-index: 100;
+    padding-bottom: 60px; 
 }
 
 .botones-nav a {
@@ -89,6 +91,7 @@ nav {
     height: 56px;
     z-index: 100;
     position: relative;
+    background-color: #0280ff; /* <-- AÑADE EL COLOR AQUÍ */
 }
 
 .logo-nav {
@@ -117,24 +120,21 @@ nav {
 
 /* -------------------------- BANNER NAV SVG -------------------------- */
 
-.banner-wrap {
+.banner-wrap{
   position: absolute;
-  top: 56px;          /* justo debajo del nav */
   left: 0;
+  bottom: 0;             /* <-- abajo */
   width: 100%;
-  height: 32px;       /* ← ALTURA REAL DEL BANNER (ajusta si hace falta) */
-  overflow: hidden;   /* ← recorta el “aire” del SVG */
+  height: 60px;
   z-index: 50;
   pointer-events: none;
 }
 
-.banner-nav {
-  width: 110%;    
-  overflow: hidden;    /* ← zoom horizontal para comerse el espacio extra */
+.banner-nav{
+  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: translateX(-5%); /* ← centra el recorte */
 }
 /* -------------------------- NEWSLETTER -------------------------- */
 .newsletter {
