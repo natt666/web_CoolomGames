@@ -31,13 +31,13 @@ html {
 
 .hero-characters {
     position: absolute;
-    bottom: -16%;
+    bottom: -39%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 95%;
+    height: 120%;
     z-index: 1;
 }
 
@@ -47,11 +47,14 @@ html {
     object-fit: contain;
     transition: transform 0.3s ease;
     cursor: default;
+    flex-shrink: 0;
+    max-width: none;
 }
 
 .hero-char-left {
     z-index: 1;
-    margin-right: -100px;
+    margin-left: 130px;
+    margin-right: -280px;
 }
 
 .hero-char-center {
@@ -61,17 +64,19 @@ html {
 
 .hero-char-right {
     z-index: 2;
-    margin-left: -100px;
+        margin-left: -250px;
+
 }
 
 .hero-char.hover-active {
     transform: scale(1.20) !important;
     z-index: 10;
-    cursor: pointer;
 }
-
+ 
 .hero-char-center.hover-active {
     transform: scale(1.35) !important;
+        cursor: pointer;
+
 }
 
 /* -------------------------- HOLA -------------------------- */
@@ -108,8 +113,8 @@ html {
     align-items: center;
     gap: 40px;
     text-align: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
     border-radius: 40px;
+    background-color: #f7fdff;
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -125,12 +130,6 @@ html {
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, 
-        #60afff 0%, 
-        #0280ff 25%, 
-        #006ad5 50%, 
-        #0280ff 75%, 
-        #60afff 100%);
     box-shadow: 0 2px 15px rgba(2, 128, 255, 0.4);
 }
 
@@ -141,7 +140,6 @@ html {
     right: -20%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(2, 128, 255, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -192,13 +190,9 @@ html {
     position: relative;
     z-index: 0;
 }
+
 .hola-som-coolom a {
-    background-color: #006ad5;
-    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
-    background-size: 250px;
-    background-repeat: repeat;
-    background-blend-mode: overlay;
-    background-position: center;
+    background-color: #0280ff;
     opacity: 1;
     color: white;
     font-weight: 900;
@@ -219,13 +213,19 @@ html {
 .hola-som-coolom a::after {
     content: '';
     position: absolute;
+    background-size: 250px;
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    background-position: center;
     top: 0;
     left: 0;
+    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 75, 151, 0.3);
+    opacity: 0.1;
     z-index: -1;
     border-radius: 50px;
+    transition: background-size 0.5s ease;
 }
 
 .hola-som-coolom a::before {
@@ -235,7 +235,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background-color:#0280ff;
     transition: left 0.5s ease;
 }
 
@@ -250,6 +250,11 @@ html {
 
 .hola-som-coolom a:active {
     transform: translateY(-1px) scale(1.03);
+    background-size: 300px;
+
+}
+.hola-som-coolom a:hover::after {
+    background-size: 300px;
 }
 
 /* -------------------------- GAMES CAROUSEL -------------------------- */
@@ -259,9 +264,30 @@ html {
     margin-top: 80px;
     padding: 80px 0;
     transform: skewY(2deg);
+    position: relative;
+    overflow: hidden;
 }
 
+.div-games-carousel::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
+    background-size: 1200px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.025;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
 .games-carousel-wrapper {
+    position: relative;
+    z-index: 1;
     width: 90%;
     max-width: 1600px;
     justify-self: center;
@@ -326,14 +352,6 @@ html {
     right: 0;
     bottom: 0;
     height: 100%;
-    background: linear-gradient(
-        to top, 
-        rgba(0, 0, 0, 0.9) 0%, 
-        rgba(0, 0, 0, 0.7) 30%,
-        rgba(0, 0, 0, 0.4) 60%, 
-        transparent 100%
-    );
-    opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 1;
     pointer-events: none;
@@ -391,7 +409,6 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.5s ease;
 }
 
@@ -402,7 +419,6 @@ html {
 .carousel-arrow:hover {
     background: #0280ff;
     transform: scale(1.2) rotate(10deg);
-    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .carousel-arrow:active {

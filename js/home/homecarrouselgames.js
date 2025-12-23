@@ -1,4 +1,3 @@
-// Configuración de juegos
 const games = [
     {
         image: 'resources/img/dating_killmulator/landing_page/dating_lp_img.png',
@@ -20,11 +19,9 @@ const games = [
     }
 ];
 
-// Crear el carrusel
 function createCarousel() {
     const container = document.getElementById('games-carousel');
     
-    // Crear estructura HTML
     const carouselHTML = `
         <div class="games-carousel">
             <button class="carousel-arrow left-arrow">&#10094;</button>
@@ -39,11 +36,9 @@ function createCarousel() {
     
     container.innerHTML = carouselHTML;
     
-    // Duplicar juegos para efecto infinito (3 copias)
     const extendedGames = [...games, ...games, ...games];
     const track = document.getElementById('carousel-track');
     
-    // Crear slides
     extendedGames.forEach(game => {
         const slide = document.createElement('a');
         slide.href = game.link;
@@ -57,22 +52,20 @@ function createCarousel() {
         track.appendChild(slide);
     });
     
-    // Inicializar funcionalidad del carrusel
     initCarousel();
 }
 
-// Funcionalidad del carrusel
 function initCarousel() {
     const carouselTrack = document.getElementById('carousel-track');
     const slides = document.querySelectorAll('.carousel-slide');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
     
-    let currentIndex = games.length; // Empezar en la segunda copia
+    let currentIndex = games.length;
     const totalOriginal = games.length;
     
     const getSlideWidth = () => {
-        return slides[0].offsetWidth + 50; // ancho + gap de 50px
+        return slides[0].offsetWidth + 50;
     };
     
     function updateCarousel(smooth = true) {
@@ -88,7 +81,6 @@ function initCarousel() {
         currentIndex++;
         updateCarousel();
         
-        // Resetear al inicio de la segunda copia
         if (currentIndex >= totalOriginal * 2) {
             setTimeout(() => {
                 currentIndex = totalOriginal;
@@ -101,7 +93,6 @@ function initCarousel() {
         currentIndex--;
         updateCarousel();
         
-        // Resetear al final de la segunda copia
         if (currentIndex < totalOriginal) {
             setTimeout(() => {
                 currentIndex = totalOriginal * 2 - 1;
@@ -110,12 +101,9 @@ function initCarousel() {
         }
     });
     
-    // Responsive
     window.addEventListener('resize', () => updateCarousel(false));
     
-    // Inicializar posición
     updateCarousel(false);
 }
 
-// Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', createCarousel);

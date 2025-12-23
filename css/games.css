@@ -5,7 +5,6 @@
 }
 
 .games-main {
-    background: linear-gradient(180deg, #006ad5 0%, #0280ff 100%);
     min-height: 100vh;
 }
 
@@ -14,7 +13,24 @@
     width: 100%;
     padding: 100px 40px 80px;
     position: relative;
+    background-color: #f7fdff;
     overflow: hidden;
+}
+
+.games-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
+    background-size: 1200px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .games-hero::before {
@@ -24,14 +40,14 @@
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
 
 .games-hero-content {
     max-width: 900px;
-    margin: 0 auto;
+    justify-self: center;
+    background-color: #f7fdff;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -39,12 +55,17 @@
     gap: 30px;
     position: relative;
     z-index: 1;
+     box-shadow: 
+        0 0 0 50px rgba(247, 253, 255, 0.8),
+        0 0 0 100px rgba(247, 253, 255, 0.6),
+        0 0 0 150px rgba(247, 253, 255, 0.4),
+        0 0 0 200px rgba(247, 253, 255, 0.2),
+        0 0 0 250px rgba(247, 253, 255, 0.1);
 }
 
 .hero-decoration {
     height: 120px;
     width: auto;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
     animation: float 3s ease-in-out infinite;
 }
 
@@ -60,16 +81,13 @@
 .games-hero h1 {
     font-family: 'Lilita One', 'Times New Roman';
     font-size: 64px;
-    color: white;
-    text-shadow: 
-        0 4px 20px rgba(0, 0, 0, 0.3),
-        0 8px 40px rgba(0, 0, 0, 0.2);
+    color: #006ad5;
     letter-spacing: 2px;
 }
 
 .games-hero p {
     font-size: 20px;
-    color: white;
+    color: #333333;
     line-height: 1.8;
     opacity: 0.95;
     max-width: 700px;
@@ -212,7 +230,7 @@
 }
 
 .merch-button {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    background: #f7fdff;
     color: #0280ff;
     font-family: 'Lilita One', 'Times New Roman';
     font-size: 24px;
@@ -238,7 +256,6 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(2, 128, 255, 0.2), transparent);
     transition: left 0.5s ease;
 }
 
