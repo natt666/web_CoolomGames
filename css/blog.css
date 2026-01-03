@@ -117,20 +117,70 @@ html {
 
 .read-more-button {
     align-self: flex-start;
-    display: inline-block;
-    background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
-    color: white;
+    background-color: #0280ff;
+    opacity: 1;
+    color: #f7fdff;
+    font-weight: 900;
+    font-family: 'Nunito', 'Times New Roman';
+    font-size: 16px;
     padding: 12px 30px;
+    border: none;
     border-radius: 50px;
+    cursor: pointer;
     text-decoration: none;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(2, 128, 255, 0.3);
+    transition: all 0.3s ease, background-size 0.5s ease;
+    display: inline-block;
+    
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.read-more-button::after {
+    content: '';
+    position: absolute;
+    background-size: 200px;
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    background-position: center;
+    top: 0;
+    left: 0;
+    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    border-radius: 50px;
+    transition: background-size 0.5s ease;
+}
+
+.read-more-button::before {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #0280ff;
+    transition: left 0.5s ease;
+}
+
+.read-more-button:hover::before {
+    left: 100%;
 }
 
 .read-more-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(2, 128, 255, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    background-size: 250px;
+}
+
+.read-more-button:active {
+    transform: translateY(-1px) scale(1.03);
+    background-size: 250px;
+}
+
+.read-more-button:hover::after {
+    background-size: 250px;
 }
 
 /* =========================================
@@ -199,11 +249,22 @@ html {
     color: #0280ff;
 }
 
+.article-body ul {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+.article-body ul li {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 10px;
+}
+
 /* =========================================
-   BOTONS D'ACCIO (CTA) UNIFICATS
+   BOTONS CTA - ESTIL COOLOM
    ========================================= */
 
-/* Contenidors per centrar */
 .patreon-cta-container,
 .website-cta-container {
     display: flex;
@@ -211,29 +272,76 @@ html {
     margin: 40px 0;
 }
 
-/* Estil UNIFICAT per a tots els botons (Color Patreon #FF424D) */
 .patreon-button,
 .website-button {
-    background-color: #FF424D; /* Color vermell Patreon per a tots */
-    color: white;
-    font-family: 'Lilita One', 'Times New Roman';
-    font-size: 20px;
-    padding: 15px 40px;
+    background-color: #0280ff;
+    opacity: 1;
+    color: #f7fdff;
+    font-weight: 900;
+    font-family: 'Nunito', 'Times New Roman';
+    font-size: 18px;
+    padding: 18px 45px;
+    border: none;
     border-radius: 50px;
+    cursor: pointer;
     text-decoration: none;
-    letter-spacing: 1px;
-    box-shadow: 0 10px 25px rgba(255, 66, 77, 0.3); /* Ombra vermella */
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    display: inline-block; /* Assegura que agafi bé el padding */
+    transition: all 0.3s ease, background-size 0.5s ease;
+    display: inline-block;
+    
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
-/* Efecte Hover UNIFICAT */
+.patreon-button::after,
+.website-button::after {
+    content: '';
+    position: absolute;
+    background-size: 250px;
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    background-position: center;
+    top: 0;
+    left: 0;
+    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+    border-radius: 50px;
+    transition: background-size 0.5s ease;
+}
+
+.patreon-button::before,
+.website-button::before {
+    content: '';
+    position: absolute;
+    bottom: -70px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #0280ff;
+    transition: left 0.5s ease;
+}
+
+.patreon-button:hover::before,
+.website-button:hover::before {
+    left: 100%;
+}
+
 .patreon-button:hover,
 .website-button:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(255, 66, 77, 0.5); /* Ombra vermella més intensa */
-    background-color: white;
-    color: #FF424D; /* Text vermell al passar el ratolí */
-    border: 2px solid #FF424D; /* Vora vermella */
+    transform: translateY(-3px) scale(1.05);
+    background-size: 300px;
+}
+
+.patreon-button:active,
+.website-button:active {
+    transform: translateY(-1px) scale(1.03);
+    background-size: 300px;
+}
+
+.patreon-button:hover::after,
+.website-button:hover::after {
+    background-size: 300px;
 }

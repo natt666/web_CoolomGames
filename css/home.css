@@ -194,7 +194,7 @@ html {
 .hola-som-coolom a {
     background-color: #0280ff;
     opacity: 1;
-    color: white;
+    color: #f7fdff;
     font-weight: 900;
     font-family: 'Nunito', 'Times New Roman';
     font-size: 18px;
@@ -299,7 +299,7 @@ html {
     text-align: center;
     font-family: 'Lilita One', 'Times New Roman';
     font-size: 48px;
-    color: white;
+    color: #f7fdff;
     margin-bottom: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -338,7 +338,7 @@ html {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
-    background: white;
+    background: #f7fdff;
     text-decoration: none;
     display: block;
     cursor: pointer;
@@ -385,7 +385,7 @@ html {
 
 .carousel-arrow {
     background: #0280ff;
-    color: white;
+    color: #f7fdff;
     border:  #0280ff;
     font-size: 28px;
     width: 70px;
@@ -430,7 +430,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #f7fdff;
     font-family: 'Nunito', 'Times New Roman';
     font-size: 32px;
     font-weight: 800;
@@ -464,7 +464,7 @@ html {
 .section-title {
     font-family: 'Lilita One', 'Times New Roman';
     font-size: 48px;
-    color: white;
+    color: #f7fdff;
     text-align: center;
     margin-bottom: 50px;
     text-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -478,7 +478,7 @@ html {
 }
 
 .home-blog-card {
-    background-color: white;
+    background-color: #f7fdff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -565,8 +565,8 @@ html {
     display: inline-block;
     padding: 12px 35px;
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid #f7fdff;
+    color: #f7fdff;
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
     font-size: 18px;
@@ -576,7 +576,7 @@ html {
 }
 
 .view-all-btn:hover {
-    background-color: white;
+    background-color: #f7fdff;
     color: #0280ff;
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);

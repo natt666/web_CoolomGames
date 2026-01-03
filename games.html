@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coolom Games | Our Games</title>
-  <link rel="stylesheet" href="/css/games.css">
-  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="\css\games.css">
+  <link rel="stylesheet" href="\css\global.css">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -27,9 +27,9 @@
       <div class="botones-nav">
         <a href="games.html"><button style="color: #004b97; font-weight: 900;" data-text="Games">Games</button></a>
         <a href="about.html"><button data-text="About">About</button></a>
-        <a href="merch.html"><button data-text="Merch">Merch</button></a>
         <a href="contact.html"><button data-text="Contact">Contact</button></a>
         <a href="blog.html"><button data-text="Blog">Blog</button></a>
+        <a href="https://datingkillmulator.store/"><button data-text="Merch">Merch <img src="resources/ui/icons/redirection_white.png" alt="" class="nav-redirect-icon"></button></a>
       </div>
     </div>
 
@@ -51,55 +51,23 @@
     <!-- Games Grid -->
     <section class="games-grid-section">
       <div class="games-list">
-        
-        <!-- Dating Killmulator -->
-        <div class="game-item">
-          <div class="game-image-wrapper">
-            <img src="resources/img/dating_killmulator/landing_page/dating_lp_img.png" alt="Dating Killmulator">
-          </div>
-          <div class="game-info">
-            <img src="resources/img/dating_killmulator/logo/logo_vermell.png" alt="Dating Killmulator Logo" class="game-info-logo">
-            <p class="game-description">A darkly comedic dating simulator where you navigate romance with some rather... deadly suitors. Swipe right at your own risk in this thrilling blend of visual novel and survival horror!</p>
-            <a href="https://coolom-games.itch.io/datingkillmulator" target="_blank" rel="noopener noreferrer" class="game-link">Learn More →</a>
-          </div>
-        </div>
-
-        <!-- Patufet -->
-        <div class="game-item reverse">
-          <div class="game-image-wrapper">
-            <img src="resources/img/en_patufet_torna_a_casa/landing_page/patufet_lp_img.png" alt="Patufet">
-          </div>
-          <div class="game-info">
-            <p class="game-description">An enchanting adventure inspired by Catalan folklore. Guide the tiny hero Patufet through a magical world filled with puzzles, charm, and endless replayability!</p>
-            <a href="https://coolom-games.itch.io/enpatufettornaacasa" target="_blank" rel="noopener noreferrer" class="game-link">Learn More →</a>
-          </div>
-        </div>
-
-        <!-- Midlander -->
-        <div class="game-item">
-          <div class="game-image-wrapper">
-            <img src="resources/img/midlander/landing_page/midlander_lp_img.png" alt="Midlander">
-          </div>
-          <div class="game-info">
-            <img src="resources/img/midlander/logo/logo.png" alt="Midlander Logo" class="game-info-logo">
-            <p class="game-description">Explore mysterious lands in this atmospheric adventure. Discover secrets, solve puzzles, and uncover the truth in a beautifully crafted world.</p>
-            <a href="http://coolom-games.itch.io/midlander" target="_blank" rel="noopener noreferrer" class="game-link">Learn More →</a>
-          </div>
-        </div>
-
+        <!-- Los juegos se cargan dinámicamente desde games-list.js -->
       </div>
     </section>
 
     <!-- Merch Button -->
     <section class="merch-button-section">
-      <a href="merch.html" class="merch-button">Buy Merch!</a>
+      <a href="https://datingkillmulator.store/" class="merch-button" target="_blank">
+        Buy Merch!
+        <img src="resources/ui/icons/redirection_black.png" alt="External link" class="merch-redirect-icon">
+      </a>
     </section>
   </main>
 
   <div class="newsletter">
     <div class="newsletter-wrapper">
       <div class="newsletter-icon">
-        <img src="resources/img/coolom_games/logo/logo_blanco.png" alt="Logo">
+        <img src="resources/ui/pigeons/3.png" alt="Logo">
       </div>
       <div class="newsletter-content">
         <h2>Stay in the Loop!</h2>
@@ -120,7 +88,7 @@
           <a href="home.html">Home</a>
           <a href="games.html">Games</a>
           <a href="about.html">About</a>
-          <a href="merch.html">Merch</a>
+          <a href="https://datingkillmulator.store/">Merch <img src="resources/ui/icons/redirection_white.png" alt="" class="footer-redirect-icon"></a>
           <a href="contact.html">Contact</a>
           <a href="blog.html">Blog</a>
         </div>
@@ -150,6 +118,7 @@
     </div>
   </footer>
 
+  <script src="js/games/games-list.js"></script>
   <script src="js/social-hover.js"></script>
 
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cat">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -29,7 +29,7 @@
         <a href="about.html"><button>About</button></a>
         <a href="contact.html"><button>Contact</button></a>
         <a href="blog.html"><button>Blog</button></a>
-        <a href="https://datingkillmulator.store/" target="_blank"><button style="cursor: pointer;">Merch</button></a>
+      <a href="https://datingkillmulator.store/"><button data-text="Merch">Merch <img src="resources/ui/icons/redirection_white.png" alt="" class="nav-redirect-icon"></button></a> 
       </div>
     </div>
 
@@ -51,7 +51,9 @@
  
   
   <div class="hola-som-coolom">
+    <a href="index.html">
     <img src="resources/ui/pigeons/1.png" alt="Coolom Games Logo">
+    </a>
     <h1>Hello, we're Coolom Games!</h1>
     <p>Coolom Games is an independent game development studio, creating games full of
       creativity, with a central focus on personality and gameplay. We strive to
@@ -71,43 +73,7 @@
     <h2 class="section-title">Latest News & Updates</h2>
     
     <div class="home-blog-grid">
-      
-      <article class="home-blog-card">
-        <div class="blog-card-image">
-          <img src="resources/img/blog/patreon_video.png" alt="Birthday Celebration">
-        </div>
-        <div class="blog-card-content">
-          <span class="blog-date">Dec 16, 2025</span>
-          <h3>Birthday Bash & 10 Crushes Reveal</h3>
-          <p>Celebrate with us in this Patreon exclusive video!</p>
-          <a href="article1.html" class="blog-link">Read More ➜</a>
-        </div>
-      </article>
-
-      <article class="home-blog-card">
-        <div class="blog-card-image">
-          <img src="resources/img/blog/dating_killmulator.png" alt="Dating Killmulator Update">
-        </div>
-        <div class="blog-card-content">
-          <span class="blog-date">Dec 10, 2025</span>
-          <h3>New Chapter: Dating Killmulator</h3>
-          <p>The new update is here. Romance can be deadly.</p>
-          <a href="article2.html" class="blog-link">Read More ➜</a>
-        </div>
-      </article>
-
-      <article class="home-blog-card">
-        <div class="blog-card-image">
-          <img src="resources/img/blog/salo_manga_bcn.png" alt="Season Finale">
-        </div>
-        <div class="blog-card-content">
-          <span class="blog-date">Nov 28, 2025</span>
-          <h3>Season 1 Finale & Future Roadmap</h3>
-          <p>Important news about the upcoming break and Season 2.</p>
-          <a href="article3.html" class="blog-link">Read More ➜</a>
-        </div>
-      </article>
-
+      <!-- Los artículos se cargan dinámicamente desde home-blog.js -->
     </div>
     
     <div class="view-all-container">
@@ -139,7 +105,7 @@
           <a href="home.html">Home</a>
           <a href="games.html">Games</a>
           <a href="about.html">About</a>
-          <a href="merch.html">Merch</a>
+          <a href="https://datingkillmulator.store/">Merch <img src="resources/ui/icons/redirection_white.png" alt="" class="footer-redirect-icon"></a>
           <a href="contact.html">Contact</a>
           <a href="blog.html">Blog</a>
         </div>
@@ -171,7 +137,9 @@
 
   <script src="js/home/hero-hover.js"></script>
   <script src="js/home/homecarrouselgames.js"></script>
+  <script src="js/home/home-blog.js"></script>
   <script src="js/social-hover.js"></script>
 
+  
 </body>
 </html>

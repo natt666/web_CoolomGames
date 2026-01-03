@@ -28,7 +28,7 @@
       <a href="about.html"><button>About</button></a>
       <a href="contact.html"><button>Contact</button></a>
       <a href="blog.html"><button style="color: #004b97; font-weight: 900;">Blog</button></a> 
-      <a href="https://datingkillmulator.store/" target="_blank"><button style="cursor: pointer;">Merch</button></a>
+      <a href="https://datingkillmulator.store/"><button data-text="Merch">Merch <img src="resources/ui/icons/redirection_white.png" alt="" class="nav-redirect-icon"></button></a> 
 
     </div>
   </div>
@@ -43,36 +43,7 @@
     <p class="blog-intro">Welcome to our space! Here we share our daily life, project updates, and exclusive content about game development.</p>
 
     <div class="articles-grid">
-        
-        <article class="article-card">
-            <img src="resources/img/blog/patreon_video.png" alt="Patreon Exclusive Video Announcement">
-            <div class="card-content">
-                <h2>Birthday Bash & 10 Crushes Reveal (Patreon Exclusive)</h2>
-                <p class="article-date">Published: December 16, 2025</p>
-                <p class="article-summary">We hope you enjoy watching this as much as we enjoyed making it! We'll each share 10 crushes (some more questionable than others) while celebrating Núria and Abel's birthday!</p>
-                <a href="article1.html" class="read-more-button">Read More</a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <img src="resources/img/blog/dating_killmulator.png" alt="Dating Killmulator New Chapter Art">
-            <div class="card-content">
-                <h2>Dating Killmulator Update: The New Chapter is Here!</h2>
-                <p class="article-date">Published: December 10, 2025</p>
-                <p class="article-summary">The story moves forward with unexpected twists! Find out what to expect from the latest chapter of Dating Killmulator.</p>
-                <a href="article2.html" class="read-more-button">Read More</a>
-            </div>
-        </article>
-
-        <article class="article-card">
-            <img src="resources/img/blog/salo_manga_bcn.png" alt="Coolom Games at Salo del Manga BCN">
-            <div class="card-content">
-                <h2>Our Experience at Saló del Manga BCN & Devlog</h2>
-                <p class="article-date">Published: November 28, 2025</p>
-                <p class="article-summary">It was an incredible experience! We share our thoughts on attending Saló del Manga BCN and give you a sneak peek at the game's progress.</p>
-                <a href="article3.html" class="read-more-button">Read More</a>
-            </div>
-        </article>
+        <!-- Los artículos se cargan dinámicamente desde blog-data.js -->
     </div>
 </div>
 
@@ -100,7 +71,7 @@
           <a href="home.html">Home</a>
           <a href="games.html">Games</a>
           <a href="about.html">About</a>
-          <a href="merch.html">Merch</a>
+          <a href="https://datingkillmulator.store/">Merch <img src="resources/ui/icons/redirection_white.png" alt="" class="footer-redirect-icon"></a>
           <a href="contact.html">Contact</a>
           <a href="blog.html">Blog</a>
         </div>
@@ -130,6 +101,7 @@
     </div>
   </footer>
 
+<script src="js/blog/blog-loader.js"></script>
   <script src="js/social-hover.js"></script>
   
 </body>
