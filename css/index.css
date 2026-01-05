@@ -1,29 +1,27 @@
 main {
-    margin: 40px 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
-    display: flex;
-    justify-content: center;
+  margin: 40px 60px;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
 }
 
 .card-link a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card-bg {
-    height: 635px;
-    width: 363px;
-    background: linear-gradient(135deg, #111, #1c1c1c);
-    border-radius: 20px;
-    display: flex;
-      position: relative;
-
-    align-items: flex-end;
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 363px;
+  height: 635px;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  background-position: center;
 }
 
 .card-text {
@@ -33,38 +31,27 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
-    background: linear-gradient(
-    to top,
-    #f7fdff 0%,
-    #f7fdff 30%,
-    rgba(247, 253, 255, 0.85) 55%,
-    rgba(247, 253, 255, 0.4) 75%,
-    rgba(247, 253, 255, 0) 100%
-  );
-}
-
-
-
-.card-text h2 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .card-redirect-icon {
-    width: 18px;
-    height: 18px;
-}
-
-
-.card-text p {
-    font-family: "Nunito", sans-serif;
-    margin-top: 0.5rem;
-    color: #333;
+  width: 18px;
+  height: 18px;
 }
 
 .card-bg:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+.bg-web {
+  background-image: url("/resources/ui/index_banners/web.png");
+}
+
+
+.bg-store {
+  background-image: url("/resources/ui/index_banners/store.png");
+}
+
+.bg-itchio {
+  background-image: url("/resources/ui/index_banners/itchio.png");
 }
