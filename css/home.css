@@ -5,7 +5,7 @@
 }
 
 html {
-    background-color:  #0280ff;
+    background-color: #0280ff;
     font-family: 'Nunito', 'Times New Roman';
 }
 
@@ -16,7 +16,7 @@ html {
 .hero-image {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     overflow: hidden;
     margin-bottom: -70px;
     z-index: 0;
@@ -53,7 +53,7 @@ html {
 
 .hero-char-left {
     z-index: 1;
-    margin-left: 130px;
+    margin-left: 500px;
     margin-right: -280px;
 }
 
@@ -64,20 +64,79 @@ html {
 
 .hero-char-right {
     z-index: 2;
-        margin-left: -250px;
+    margin-left: -230px;
 
 }
 
 .hero-char.hover-active {
-    transform: scale(1.20) !important;
+    transform: scale(1.20);
     z-index: 10;
 }
- 
+
 .hero-char-center.hover-active {
-    transform: scale(1.35) !important;
-        cursor: pointer;
+    transform: scale(1.35);
+    cursor: pointer;
 
 }
+
+
+.hero-buttons {
+    position: absolute;
+    top: 89%;
+    left: 3%;
+    display: flex;
+    gap: 15px;
+    z-index: 5;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+    padding: 14px 25px;
+    justify-self: center;
+    align-self: center;
+    font-family: 'Nunito', Times New Roman;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.hero-buttons img{
+    height: 25px;
+    width: auto;
+    align-self: center;
+}
+
+.button-presskit{
+    background-color: #f7fdff;
+    color: #333;
+}
+.button-epic{
+    background-color: #323232;
+    color: #f7fdff;
+}
+
+.button-itchio{
+    background-color: #ff5b5a;
+    color: #f7fdff;
+}
+
+.button-discord{
+    background-color: #5865f2;
+    color: #f7fdff;
+}
+
+
+
+.hero-buttons a:hover {
+    transform: translateY(-6px) scale(1.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
 
 /* -------------------------- HOLA -------------------------- */
 .casa {
@@ -102,10 +161,10 @@ html {
 
 
 .hola-som-coolom {
-    width: 85%;
+    width: 75%;
     max-width: 1200px;
     justify-self: center;
-    margin-top: 250px; 
+    margin-top: 230px;
     padding: 80px 60px;
     display: flex;
     flex-direction: column;
@@ -115,7 +174,7 @@ html {
     text-align: center;
     border-radius: 40px;
     background-color: #f7fdff;
-    box-shadow: 
+    box-shadow:
         0 20px 60px rgba(0, 0, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
     position: relative;
@@ -155,12 +214,16 @@ html {
 }
 
 @keyframes logoFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) rotate(0deg);
     }
+
     25% {
         transform: translateY(-10px) rotate(2deg);
     }
+
     75% {
         transform: translateY(-5px) rotate(-2deg);
     }
@@ -170,7 +233,7 @@ html {
     font-family: 'Lilita One', 'Times New Roman';
     font-size: 64px;
     font-weight: normal;
-    background: #006ad5 ;
+    background: #006ad5;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -204,7 +267,7 @@ html {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease, background-size 0.5s ease;
-    
+
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -235,7 +298,7 @@ html {
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color:#0280ff;
+    background-color: #0280ff;
     transition: left 0.5s ease;
 }
 
@@ -253,13 +316,14 @@ html {
     background-size: 300px;
 
 }
+
 .hola-som-coolom a:hover::after {
     background-size: 300px;
 }
 
 /* -------------------------- GAMES CAROUSEL -------------------------- */
 
-.div-games-carousel{
+.div-games-carousel {
     background-color: #f7fdff;
     margin-top: 80px;
     padding: 80px 0;
@@ -268,7 +332,7 @@ html {
     overflow: hidden;
 }
 
-.div-games-carousel::after{
+.div-games-carousel::after {
     content: '';
     position: absolute;
     top: 0;
@@ -360,7 +424,7 @@ html {
 
 .carousel-slide:hover {
     transform: translateY(-15px) scale(1.05);
-    box-shadow: 
+    box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.5),
         0 10px 25px rgba(0, 0, 0, 0.3),
         0 5px 10px rgba(0, 0, 0, 0.2);
@@ -386,7 +450,7 @@ html {
 .carousel-arrow {
     background: #0280ff;
     color: #f7fdff;
-    border:  #0280ff;
+    border: #0280ff;
     font-size: 28px;
     width: 70px;
     height: 70px;
@@ -438,7 +502,7 @@ html {
     z-index: 2;
     opacity: 0;
     transition: all 0.4s ease;
-    text-shadow: 
+    text-shadow:
         0 4px 15px rgba(0, 0, 0, 1),
         0 8px 30px rgba(0, 0, 0, 0.8),
         0 12px 50px rgba(0, 0, 0, 0.6),
@@ -456,7 +520,8 @@ html {
 .home-blog-section {
     width: 90%;
     max-width: 1200px;
-    margin: 100px auto; /* Espai vertical per separar-ho dels jocs */
+    margin: 100px auto;
+    /* Espai vertical per separar-ho dels jocs */
     position: relative;
     z-index: 10;
 }
@@ -467,7 +532,7 @@ html {
     color: #f7fdff;
     text-align: center;
     margin-bottom: 50px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .home-blog-grid {
@@ -579,7 +644,7 @@ html {
     background-color: #f7fdff;
     color: #0280ff;
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive */
@@ -587,6 +652,7 @@ html {
     .home-blog-grid {
         grid-template-columns: 1fr;
     }
+
     .section-title {
         font-size: 36px;
     }

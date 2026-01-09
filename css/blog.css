@@ -12,8 +12,93 @@ html {
     font-family: 'Nunito', 'Times New Roman';
 }
 
+.blog-hero {
+    width: 100%;
+    padding: 100px 40px 80px;
+    position: relative;
+    background-color: #f7fdff;
+    overflow: hidden;
+}
+
+.blog-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
+    background-size: 1200px;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.blog-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.blog-hero-content {
+    max-width: 900px;
+    justify-self: center;
+    background-color: #f7fdff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+     box-shadow: 
+        0 0 0 50px rgba(247, 253, 255, 0.8),
+        0 0 0 100px rgba(247, 253, 255, 0.6),
+        0 0 0 150px rgba(247, 253, 255, 0.4),
+        0 0 0 200px rgba(247, 253, 255, 0.2),
+        0 0 0 250px rgba(247, 253, 255, 0.1);
+}
+
+.hero-decoration {
+    height: 120px;
+    width: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.blog-hero h1 {
+    font-family: 'Lilita One', 'Times New Roman';
+    font-size: 64px;
+    color: #006ad5;
+    letter-spacing: 2px;
+}
+
+.blog-hero p {
+    font-size: 20px;
+    color: #333333;
+    line-height: 1.8;
+    opacity: 0.95;
+    max-width: 700px;
+}
+
 
 /* -------------------------- BLOG CONTENT -------------------------- */
+
 
 .blog-container {
     width: 90%;
