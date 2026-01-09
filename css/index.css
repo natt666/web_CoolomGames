@@ -59,15 +59,15 @@ main {
 }
 
 .bg-web {
-  background-image: url("/resources/ui/index_banners/web.png");
+  background-image: url("../resources/ui/index_banners/web.png");
 }
 
 .bg-store {
-  background-image: url("/resources/ui/index_banners/store.png");
+  background-image: url("../resources/ui/index_banners/store.png");
 }
 
 
 
 .bg-itchio {
-  background-image: url("/resources/ui/index_banners/itchio.png");
+  background-image: url("../resources/ui/index_banners/itchio.png");
 }
