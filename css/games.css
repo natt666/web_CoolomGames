@@ -191,7 +191,15 @@
     opacity: 0.95;
 }
 
+.game-link > * {
+    position: relative;
+    z-index: 2;
+}
+
 .game-link {
+    z-index: 0;
+    position: relative;          
+    overflow: hidden;   
     background: #f7fdff;
     color: #0280ff;
     font-family: 'Nunito', 'Times New Roman';
@@ -220,6 +228,20 @@
 .game-link:active {
     transform: translateY(-1px) scale(1.03);
 }
+
+.game-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../resources/ui/patterns/pattern_pigeons_black.png');
+    background-repeat: repeat;
+    background-size: 150px;
+    background-position: center;
+    opacity: 0.15;
+    z-index: -1;                 /* CLAVE */
+    pointer-events: none;
+}
+
 
 /* -------------------------- MERCH BUTTON -------------------------- */
 .merch-button-section {

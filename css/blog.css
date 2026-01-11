@@ -103,7 +103,7 @@ html {
 .blog-container {
     width: 90%;
     max-width: 1400px;
-    margin-top:120px;
+    margin:120px 80px;
     justify-self: center;
     padding: 60px;
     background-color: #f7fdff;

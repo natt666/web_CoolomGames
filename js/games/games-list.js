@@ -54,7 +54,7 @@ function createGamesList() {
             <div class="game-info">
                 ${game.logo ? `<img src="${game.logo}" alt="${game.title} Logo" class="game-info-logo">` : ''}
                 <p class="game-description">${game.description}</p>
-                <a href="${game.link}" target="_blank" rel="noopener noreferrer" class="game-link">Learn More →</a>
+                <a href="${game.link}" target="_blank" rel="noopener noreferrer" class="game-link">Learn More</a>
             </div>
         `;
         

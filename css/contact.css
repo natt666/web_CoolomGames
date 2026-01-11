@@ -1,12 +1,3 @@
-/* =========================================
-   ESTILS ESPECÍFICS DE CONTACTE
-   (El reset i el nav venen de global.css)
-   ========================================= */
-
-/* Decoració de núvols (opcional, ajustada per a aquesta pàgina) */
-
-/* Contenidor Principal (estil tipus 'Card' com a Home) */
-
 .contact-hero {
     width: 100%;
     padding: 100px 40px 80px;
@@ -124,7 +115,6 @@
     line-height: 1.6;
 }
 
-/* Layout Grid per Formulari i Info */
 .contact-content-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -132,7 +122,6 @@
     text-align: left;
 }
 
-/* --- ESTILS DEL FORMULARI --- */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -180,7 +169,7 @@
 .submit-btn {
     margin-top: 10px;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
+    background: #0280ff ;
     color: white;
     border: none;
     border-radius: 50px;
@@ -196,7 +185,6 @@
     box-shadow: 0 8px 20px rgba(2, 128, 255, 0.4);
 }
 
-/* --- INFORMACIÓ LATERAL --- */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -219,7 +207,7 @@
     font-weight: 600;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
     .contact-content-wrapper {
         grid-template-columns: 1fr;
