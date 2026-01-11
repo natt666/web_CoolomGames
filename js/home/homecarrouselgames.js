@@ -36,6 +36,7 @@ function createCarousel() {
     
     container.innerHTML = carouselHTML;
     
+    // Duplicar los juegos para el efecto infinito
     const extendedGames = [...games, ...games, ...games];
     const track = document.getElementById('carousel-track');
     
@@ -57,6 +58,7 @@ function createCarousel() {
 
 function initCarousel() {
     const carouselTrack = document.getElementById('carousel-track');
+    const carouselContainer = document.querySelector('.carousel-container');
     const slides = document.querySelectorAll('.carousel-slide');
     const leftArrow = document.querySelector('.left-arrow');
     const rightArrow = document.querySelector('.right-arrow');
@@ -64,8 +66,18 @@ function initCarousel() {
     let currentIndex = games.length;
     const totalOriginal = games.length;
     
+    // Variables para swipe táctil
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let startTransform = 0;
+    
+    // Obtener el ancho correcto del slide incluyendo el gap
     const getSlideWidth = () => {
-        return slides[0].offsetWidth + 50;
+        const slideWidth = slides[0].offsetWidth;
+        const computedStyle = window.getComputedStyle(carouselTrack);
+        const gap = parseFloat(computedStyle.gap) || 0;
+        return slideWidth + gap;
     };
     
     function updateCarousel(smooth = true) {
@@ -74,35 +86,145 @@ function initCarousel() {
         } else {
             carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         }
-        carouselTrack.style.transform = `translateX(-${currentIndex * getSlideWidth()}px)`;
+        const offset = currentIndex * getSlideWidth();
+        carouselTrack.style.transform = `translateX(-${offset}px)`;
     }
     
-    rightArrow.addEventListener('click', () => {
-        currentIndex++;
-        updateCarousel();
+    function goToSlide(index, smooth = true) {
+        currentIndex = index;
+        updateCarousel(smooth);
         
+        // Resetear posición si llegamos a los clones
         if (currentIndex >= totalOriginal * 2) {
             setTimeout(() => {
                 currentIndex = totalOriginal;
                 updateCarousel(false);
-            }, 600);
-        }
-    });
-    
-    leftArrow.addEventListener('click', () => {
-        currentIndex--;
-        updateCarousel();
-        
-        if (currentIndex < totalOriginal) {
+            }, smooth ? 600 : 0);
+        } else if (currentIndex < totalOriginal) {
             setTimeout(() => {
                 currentIndex = totalOriginal * 2 - 1;
                 updateCarousel(false);
-            }, 600);
+            }, smooth ? 600 : 0);
+        }
+    }
+    
+    // Botón derecha
+    rightArrow.addEventListener('click', () => {
+        goToSlide(currentIndex + 1);
+    });
+    
+    // Botón izquierda
+    leftArrow.addEventListener('click', () => {
+        goToSlide(currentIndex - 1);
+    });
+    
+    // ==================== SWIPE TÁCTIL ====================
+    
+    // Touch Start
+    carouselContainer.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        startTransform = currentIndex * getSlideWidth();
+        carouselTrack.style.transition = 'none';
+    }, { passive: true });
+    
+    // Touch Move
+    carouselContainer.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        
+        currentX = e.touches[0].clientX;
+        const diff = startX - currentX;
+        const newTransform = startTransform + diff;
+        
+        carouselTrack.style.transform = `translateX(-${newTransform}px)`;
+    }, { passive: true });
+    
+    // Touch End
+    carouselContainer.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        const diff = startX - currentX;
+        const threshold = getSlideWidth() * 0.2; // 20% del ancho para cambiar
+        
+        carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                // Swipe izquierda - siguiente slide
+                goToSlide(currentIndex + 1);
+            } else {
+                // Swipe derecha - slide anterior
+                goToSlide(currentIndex - 1);
+            }
+        } else {
+            // No alcanzó el threshold, volver a la posición actual
+            updateCarousel(true);
         }
     });
     
-    window.addEventListener('resize', () => updateCarousel(false));
+    // ==================== MOUSE DRAG (para desktop) ====================
     
+    carouselContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startTransform = currentIndex * getSlideWidth();
+        carouselTrack.style.transition = 'none';
+        carouselContainer.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        currentX = e.clientX;
+        const diff = startX - currentX;
+        const newTransform = startTransform + diff;
+        
+        carouselTrack.style.transform = `translateX(-${newTransform}px)`;
+    });
+    
+    document.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        const diff = startX - currentX;
+        const threshold = getSlideWidth() * 0.2;
+        
+        carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        carouselContainer.style.cursor = 'grab';
+        
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                goToSlide(currentIndex + 1);
+            } else {
+                goToSlide(currentIndex - 1);
+            }
+        } else {
+            updateCarousel(true);
+        }
+    });
+    
+    // Prevenir que los links se activen durante el drag
+    slides.forEach(slide => {
+        slide.addEventListener('click', (e) => {
+            if (Math.abs(startX - currentX) > 5) {
+                e.preventDefault();
+            }
+        });
+    });
+    
+    // ==================== RESIZE ====================
+    
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateCarousel(false);
+        }, 100);
+    });
+    
+    // Inicializar
     updateCarousel(false);
 }
 

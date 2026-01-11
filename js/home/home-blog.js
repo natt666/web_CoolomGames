@@ -1,4 +1,4 @@
-// Cargar los 3 últimos artículos del blog en la home
+// Cargar artículos del blog en la home (3 en desktop, 2 en móvil)
 
 async function loadHomeBlogPosts() {
     try {
@@ -16,13 +16,31 @@ async function loadHomeBlogPosts() {
             return dateB - dateA;
         });
         
-        // Obtener los 3 primeros artículos
-        const latestArticles = blogArticles.slice(0, 3);
+        // Determinar cuántos artículos mostrar según el ancho de pantalla
+        updateArticleCount(blogArticles);
         
-        createHomeBlogCards(latestArticles);
+        // Actualizar cuando se redimensiona la ventana
+        window.addEventListener('resize', () => updateArticleCount(blogArticles));
         
     } catch (error) {
+        console.error('Error loading blog posts:', error);
     }
+}
+
+function updateArticleCount(blogArticles) {
+    const windowWidth = window.innerWidth;
+    let articlesToShow;
+    
+    if (windowWidth <= 480) {
+        articlesToShow = 1; // Móvil pequeño: 1 artículo
+    } else if (windowWidth <= 768) {
+        articlesToShow = 2; // Tablet/móvil: 2 artículos
+    } else {
+        articlesToShow = 3; // Desktop: 3 artículos
+    }
+    
+    const latestArticles = blogArticles.slice(0, articlesToShow);
+    createHomeBlogCards(latestArticles);
 }
 
 function createHomeBlogCards(articles) {

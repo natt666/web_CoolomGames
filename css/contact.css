@@ -194,19 +194,31 @@
     padding-left: 40px;
 }
 
+.mini-socials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
 .info-item h3 {
     font-family: 'Lilita One', sans-serif;
-    font-size: 22px;
+    font-size: 28px;
     color: #333;
     margin-bottom: 5px;
 }
 
-.info-item p {
-    color: #666;
-    font-size: 16px;
+.info-item a {
+    color: #0280ff;
+    font-size: 20px;
     font-weight: 600;
+    margin-right: 5px;
 }
 
+.info-item img{
+    width: 16px;
+    height: 16px;
+}
 
 @media (max-width: 768px) {
     .contact-content-wrapper {

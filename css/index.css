@@ -1,38 +1,60 @@
+/* Contenidor principal */
 main {
-  margin: 40px 60px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 70px;
+  gap: 30px;
+  padding: 40px 20px;
 }
 
+/* Card link */
+.card-link {
+  display: inline-block;
+  text-align: center;
+}
+
+/* Enllaços nets */
 .card-link a {
   text-decoration: none;
   color: inherit;
 }
 
-
+/* Card container */
 .card-bg {
-  width: 363px;
-  height: 635px;
-  border-radius: 20px;
+  position: relative;
   display: flex;
   align-items: flex-end;
-  position: relative;
+  justify-content: center;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  background-size: cover;
-  background-position: center;
 }
 
+/* Imatge */
+.card-bg img.card-img {
+  width: 100%;
+  max-width: 363px;      /* Desktop max width */
+  height: auto;           /* Manté proporció */
+  display: block;
+  border-radius: 20px;
+}
+
+/* Hover efecte */
+.card-bg:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+
+/* Text flotant */
 .card-floating-text {
   position: absolute;
-  bottom: 37px;
-  right: 25px;
+  bottom: 5%;
+  right: 5%;
   transform: rotate(-6deg);
   transform-origin: right bottom;
   font-family: "Lilita One", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #f7fdff;
   letter-spacing: 2px;
   padding: 0.6rem 1.4rem;
@@ -40,34 +62,49 @@ main {
   pointer-events: none;
 }
 
-.tag-web {
-  background:#033263;
+/* Colors de cada tag */
+.tag-web    { background:#033263; }
+.tag-store  { background: #6c560f; }
+.tag-itchio { background: #a1090a; }
+
+/* ---------------- Media Queries per mòbil ---------------- */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+      padding: 40px 40px;
+
+  }
+
+  body{
+    background-size:600px;
+  }
+
+  .card-bg img.card-img {
+    height: auto;
+  }
+
+  .card-floating-text {
+    font-size: 1.3rem;
+  }
+
+  .card-floating-text {
+  position: absolute;
+  bottom: 24%;
+  right: 47%;
+  transform: rotate(-6deg);
+  transform-origin: right bottom;
+  font-family: "Lilita One", sans-serif;
+  font-size: 1.1rem;
+  color: #f7fdff;
+  letter-spacing: 2px;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  pointer-events: none;
 }
 
-.tag-store {
-  background: #6c560f;
-}
-
-.tag-itchio { 
-  background: #a1090a;
-}
-
-
-.card-bg:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
-}
-
-.bg-web {
-  background-image: url("../resources/ui/index_banners/web.png");
-}
-
-.bg-store {
-  background-image: url("../resources/ui/index_banners/store.png");
-}
-
-
-
-.bg-itchio {
-  background-image: url("../resources/ui/index_banners/itchio.png");
+  .card-link:nth-child(1) img.card-img { content: url("../resources/ui/index_banners/web_r.png"); }
+  .card-link:nth-child(2) img.card-img { content: url("../resources/ui/index_banners/store_r.png"); }
+  .card-link:nth-child(3) img.card-img { content: url("../resources/ui/index_banners/itchio_r.png"); }
 }
