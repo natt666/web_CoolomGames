@@ -977,6 +977,7 @@ html {
 
     /* Hola som Coolom */
     .hola-som-coolom {
+        justify-self: center;
         margin-top: 120px;
         padding: 30px 20px;
         gap: 20px;
