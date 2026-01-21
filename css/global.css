@@ -355,7 +355,7 @@ footer {
         padding: 40px 20px 20px;
     }
     .footer-links-container{
-        width: 90px;
+        width: 75px;
         line-height: 1.7;      /* 1.5 vegades la mida de font */
         gap: 5px;
     }
