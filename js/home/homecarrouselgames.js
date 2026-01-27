@@ -161,58 +161,78 @@ function initCarousel() {
             // No alcanzó el threshold, volver a la posición actual
             updateCarousel(true);
         }
+        
+        // Resetear después de un pequeño delay
+        setTimeout(() => {
+            startX = 0;
+            currentX = 0;
+        }, 100);
     });
     
-    // ==================== MOUSE DRAG (para desktop) ====================
+    // ==================== MOUSE DRAG (solo para desktop) ====================
     
-    carouselContainer.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.clientX;
-        startTransform = currentIndex * getSlideWidth();
-        carouselTrack.style.transition = 'none';
-        carouselContainer.style.cursor = 'grabbing';
-        e.preventDefault();
-    });
+    // Detectar si es dispositivo táctil
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        
-        currentX = e.clientX;
-        const diff = startX - currentX;
-        const newTransform = startTransform + diff;
-        
-        carouselTrack.style.transform = `translateX(-${newTransform}px)`;
-    });
-    
-    document.addEventListener('mouseup', (e) => {
-        if (!isDragging) return;
-        
-        isDragging = false;
-        const diff = startX - currentX;
-        const threshold = getSlideWidth() * 0.2;
-        
-        carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        carouselContainer.style.cursor = 'grab';
-        
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0) {
-                goToSlide(currentIndex + 1);
-            } else {
-                goToSlide(currentIndex - 1);
-            }
-        } else {
-            updateCarousel(true);
-        }
-    });
-    
-    // Prevenir que los links se activen durante el drag
-    slides.forEach(slide => {
-        slide.addEventListener('click', (e) => {
-            if (Math.abs(startX - currentX) > 5) {
-                e.preventDefault();
-            }
+    if (!isTouchDevice) {
+        // Solo habilitar mouse drag en desktop
+        carouselContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startTransform = currentIndex * getSlideWidth();
+            carouselTrack.style.transition = 'none';
+            carouselContainer.style.cursor = 'grabbing';
+            e.preventDefault();
         });
-    });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            currentX = e.clientX;
+            const diff = startX - currentX;
+            const newTransform = startTransform + diff;
+            
+            carouselTrack.style.transform = `translateX(-${newTransform}px)`;
+        });
+        
+        document.addEventListener('mouseup', (e) => {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            const diff = startX - currentX;
+            const threshold = getSlideWidth() * 0.2;
+            
+            carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            carouselContainer.style.cursor = 'grab';
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    goToSlide(currentIndex + 1);
+                } else {
+                    goToSlide(currentIndex - 1);
+                }
+            } else {
+                updateCarousel(true);
+            }
+            
+            // Resetear después de un pequeño delay
+            setTimeout(() => {
+                startX = 0;
+                currentX = 0;
+            }, 100);
+        });
+        
+        // Prevenir que los links se activen durante el drag (solo desktop)
+        slides.forEach(slide => {
+            slide.addEventListener('click', (e) => {
+                // Solo prevenir si hubo un drag significativo
+                const dragDistance = Math.abs(startX - currentX);
+                if (isDragging || dragDistance > 10) {
+                    e.preventDefault();
+                }
+            });
+        });
+    }
     
     // ==================== RESIZE ====================
     

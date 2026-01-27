@@ -97,8 +97,9 @@
 .games-grid-section {
     width: 90%;
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 80px 40px 100px;
+    justify-self: center;
+    margin: 100px auto;
+
 }
 
 .games-list {
@@ -323,6 +324,10 @@
 
 /* -------------------------- RESPONSIVE -------------------------- */
 @media (max-width: 968px) {
+    body{
+        background-size:600px;
+
+    }
     .games-hero {
         padding: 80px 30px 60px;
     }
@@ -337,11 +342,6 @@
     
     .hero-decoration {
         height: 100px;
-    }
-    
-    .games-grid-section {
-        width: 95%;
-        padding: 60px 30px 80px;
     }
     
     .games-list {
@@ -374,9 +374,6 @@
         height: 80px;
     }
     
-    .games-grid-section {
-        padding: 60px 20px 80px;
-    }
     
     .games-list {
         gap: 60px;
@@ -400,5 +397,57 @@
     .game-link {
         font-size: 16px;
         padding: 12px 30px;
+    }
+}
+
+
+@media (max-width: 400px){
+    .games-hero h1{
+        font-size: 24px;
+    }
+
+    .games-hero p {
+        font-size: 13px;
+    }
+
+    .games-hero-content{
+        width: 60%;
+        gap:20px;
+        box-shadow: 
+            0 0 0 10px rgba(247, 253, 255, 0.8),
+            0 0 0 20px rgba(247, 253, 255, 0.6),
+            0 0 0 30px rgba(247, 253, 255, 0.4),
+            0 0 0 40px rgba(247, 253, 255, 0.2);
+    }
+    
+    .hero-decoration {
+        height: 70px;
+    } 
+    .game-info-logo {
+        display: none;
+    }
+    
+    /* Opcional: Ajustar margen si el logo deja mucho espacio vacío */
+    .game-info {
+        gap: 15px;
+    }
+    .games-grid-section{
+        margin: 50px auto;
+        justify-items: center;
+    }
+
+    .game-link{
+        justify-self: center;
+    }
+
+    .game-link::after{
+        background-size: 220px;
+    }
+    .game-link{
+        align-self: center;
+        font-weight: 900;
+    }
+    .games-list{
+        gap: 80px;
     }
 }

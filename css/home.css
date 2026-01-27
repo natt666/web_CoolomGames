@@ -365,7 +365,7 @@ html {
 
 .div-games-carousel {
     background-color: #f7fdff;
-    margin-top: 80px;
+    margin: 80px auto 120px;
     padding: 80px 0;
     transform: skewY(2deg);
     position: relative;
@@ -497,7 +497,7 @@ html {
     height: 70px;
     cursor: pointer;
     border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.2s ease-out;
     z-index: 10;
     flex-shrink: 0;
     display: flex;
@@ -505,6 +505,8 @@ html {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    -webkit-tap-highlight-color: rgba(2, 128, 255, 0.3);
+    touch-action: manipulation;
 }
 
 .carousel-arrow::before {
@@ -517,17 +519,21 @@ html {
     transition: left 0.5s ease;
 }
 
-.carousel-arrow:hover::before {
-    left: 100%;
-}
-
-.carousel-arrow:hover {
-    background: #0280ff;
-    transform: scale(1.2) rotate(10deg);
+@media (hover: hover) {
+    .carousel-arrow:hover {
+        background: #0280ff;
+        transform: scale(1.2) rotate(10deg);
+    }
+    
+    .carousel-arrow:active {
+        transform: scale(1.15) rotate(5deg);
+        transition: all 0.1s ease-in;
+    }
 }
 
 .carousel-arrow:active {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.15) rotate(5deg);
+    transition: all 0.1s ease-in;
 }
 
 .game-title {
@@ -903,12 +909,6 @@ html {
 
     .carousel-slide img {
         height: 180px;
-    }
-
-    .carousel-arrow {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
     }
 
     .game-title {

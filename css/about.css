@@ -116,7 +116,6 @@
 
 .story-container {
     max-width: 1000px;
-    margin: 0 auto;
     position: relative;
 }
 
@@ -546,6 +545,10 @@
 
 /* -------------------------- RESPONSIVE -------------------------- */
 @media (max-width: 968px) {
+    body{
+        background-size:600px;
+    }
+
      .about-hero {
         padding: 80px 30px 60px;
     }
@@ -625,6 +628,7 @@
     
     .section-subtitle {
         font-size: 16px;
+        width: 70%;
     }
     
     .story-item {
@@ -667,5 +671,122 @@
     
     .faq-answer {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 400px){
+
+    .about-hero h1{
+        font-size: 24px;
+    }
+
+    .about-hero p {
+        font-size: 13px;
+    }
+
+   .about-hero-content {
+        width: 65%; /* Aumentamos del 60% al 85% para ganar espacio */
+        gap: 20px;
+        box-shadow: 
+            0 0 0 10px rgba(247, 253, 255, 0.8),
+            0 0 0 20px rgba(247, 253, 255, 0.6),
+            0 0 0 30px rgba(247, 253, 255, 0.4);
+    }
+
+    /* 2. Arreglo de la Sección Story (Timeline) */
+    .story-section {
+        padding: 30px 15px;
+    }
+
+.story-container {
+        margin-left: 40px; /* Reduït per guanyar espai pel text */
+        max-width: 95%;
+        left: 0 !important;
+    }
+
+    .story-container::before {
+        left: 0; /* Línia enganxada a l'inici del container */
+        transform: none;
+    }
+
+    .story-item {
+        /* Augmentem la primera columna perquè l'any es vegi sencer */
+        grid-template-columns: 55px 1fr !important; 
+        gap: 15px;
+        margin-bottom: 30px;
+        direction: ltr !important;
+    }
+
+    .story-item:nth-child(odd) .story-year,
+    .story-item:nth-child(even) .story-year {
+        grid-column: 1 !important;
+        font-size: 18px; /* Mida llegible per l'any */
+        justify-content: center;
+        text-shadow: none;
+    }
+
+    /* El punt de la línia: l'ajustem perquè quedi centrat amb la línia vertical */
+    .story-year::after {
+        left: -28px !important; /* Ajustat manualment segons el margin-left */
+        width: 12px;
+        height: 12px;
+        right: auto !important;
+    }
+
+    .story-item:nth-child(odd) .story-content,
+    .story-item:nth-child(even) .story-content {
+        grid-column: 2 !important;
+        max-width: 260px; /* Una mica més ample per aprofitar el mòbil */
+        padding: 15px;
+        text-align: left;
+    }
+
+    .story-content h3 {
+        font-size: 18px;
+    }
+
+    .story-content p {
+        font-size: 13px;
+    }
+
+    .achievements-grid{
+        column-gap: 20px;
+    }
+
+.team-grid {
+        /* Cambiamos a 2 columnas de igual tamaño */
+        grid-template-columns: 1fr 1fr !important; 
+        gap: 15px; /* Espacio entre las tarjetas */
+        padding: 0 5px;
+    }
+
+    .team-card {
+        text-align: center;
+    }
+
+    .team-image-container {
+        height: 200px;;
+    }
+
+    .team-info .team-name {
+        font-size: 16px; /* Texto más pequeño para evitar saltos de línea feos */
+    }
+
+    .team-info .team-role, 
+    .team-info .team-title {
+        font-size: 12px;
+    }
+    .team-info{
+        padding: 10px;
+    }
+
+
+    .team-bio {
+        display: none; /* Opcional: ocultar la biografía en móvil para ahorrar espacio vertical */
+    }
+
+    /* Ajuste para la tarjeta vacía (placeholder) */
+    .team-placeholder {
+        font-size: 24px;
     }
 }
