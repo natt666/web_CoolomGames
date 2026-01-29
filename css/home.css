@@ -5,13 +5,10 @@
 }
 
 html {
-    background-color: #333;
+    background-color: #0280ff;
     font-family: 'Nunito', 'Times New Roman';
     scroll-behavior: smooth;
 
-}
-body{
-    background-color: #0280ff;
 }
 
 
@@ -206,7 +203,7 @@ body{
 .hola-som-coolom {
     width: 75%;
     max-width: 1200px;
-    margin: 230px auto 80px auto;
+margin: 230px auto 80px auto;
     padding: 80px 60px;
     display: flex;
     flex-direction: column;
