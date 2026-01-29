@@ -86,8 +86,7 @@
 }
 
 .contact-container {
-    margin: 100px 0px 100px;
-    justify-self: center;
+    margin: 100px auto 100px;
     width: 55%;
     padding: 60px;
     background-color: #f7fdff;
