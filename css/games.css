@@ -364,7 +364,11 @@
     .games-hero p {
         font-size: 16px;
     }
-    
+    .game-info-logo, 
+    .game-link {
+        /* Esto es vital: anula el 'flex-start' (izquierda) que tienen en escritorio */
+        align-self: center; 
+    }
     .games-list {
         gap: 60px;
     }
@@ -376,6 +380,9 @@
         gap: 30px;
     }
     
+    .game-info {
+        text-align: center; /* Centra el texto de la descripción */
+    }
     .game-image-wrapper {
         height: 300px;
     }
