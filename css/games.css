@@ -324,10 +324,6 @@
 
 /* -------------------------- RESPONSIVE -------------------------- */
 @media (max-width: 968px) {
-    body{
-        background-size:600px;
-
-    }
     .games-hero {
         padding: 80px 30px 60px;
     }
@@ -339,13 +335,11 @@
     .games-hero p {
         font-size: 18px;
     }
-    
-    .hero-decoration {
-        height: 100px;
-    }
+
     
     .games-list {
         gap: 80px;
+        width: 90%
     }
     
     .game-item {
@@ -358,6 +352,9 @@
 }
 
 @media (max-width: 640px) {
+    .games-hero::after{
+    background-size: 600px;
+}
     .games-hero {
         padding: 60px 20px 50px;
     }
@@ -369,11 +366,6 @@
     .games-hero p {
         font-size: 16px;
     }
-    
-    .hero-decoration {
-        height: 80px;
-    }
-    
     
     .games-list {
         gap: 60px;
@@ -403,7 +395,7 @@
 
 @media (max-width: 400px){
     .games-hero h1{
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .games-hero p {
@@ -420,9 +412,6 @@
             0 0 0 40px rgba(247, 253, 255, 0.2);
     }
     
-    .hero-decoration {
-        height: 70px;
-    } 
     .game-info-logo {
         display: none;
     }
