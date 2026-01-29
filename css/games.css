@@ -46,7 +46,7 @@
 
 .games-hero-content {
     max-width: 900px;
-    justify-self: center;
+    margin: 0 auto;
     background-color: #f7fdff;
     text-align: center;
     display: flex;
@@ -97,9 +97,7 @@
 .games-grid-section {
     width: 90%;
     max-width: 1400px;
-    justify-self: center;
     margin: 100px auto;
-
 }
 
 .games-list {
