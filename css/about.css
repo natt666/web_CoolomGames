@@ -684,8 +684,16 @@
     }
 
    .about-hero-content {
-        width: 65%; /* Aumentamos del 60% al 85% para ganar espacio */
-        gap: 20px;
+    width: 95%; 
+    gap: 20px;
+    box-shadow: 0 0 0 10px rgba(247, 253, 255, 0.5);
+    padding: 30px 20px;
+    
+    /* CAMBIO 2: Borra el justify-self que no funciona */
+    /* justify-self: center; */
+
+    /* CAMBIO 3: Asegura el centrado con márgenes automáticos */
+    margin: 0 auto;
         box-shadow: 
             0 0 0 10px rgba(247, 253, 255, 0.8),
             0 0 0 20px rgba(247, 253, 255, 0.6),

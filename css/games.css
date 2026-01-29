@@ -366,7 +366,6 @@
     }
     .game-info-logo, 
     .game-link {
-        /* Esto es vital: anula el 'flex-start' (izquierda) que tienen en escritorio */
         align-self: center; 
     }
     .games-list {
