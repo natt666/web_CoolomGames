@@ -685,14 +685,6 @@
         font-size: 13px;
     }
 
-   .about-hero-content {
-        width: 65%; /* Aumentamos del 60% al 85% para ganar espacio */
-        gap: 20px;
-        box-shadow: 
-            0 0 0 10px rgba(247, 253, 255, 0.8),
-            0 0 0 20px rgba(247, 253, 255, 0.6),
-            0 0 0 30px rgba(247, 253, 255, 0.4);
-    }
 
     /* 2. Arreglo de la Sección Story (Timeline) */
     .story-section {
