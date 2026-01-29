@@ -203,8 +203,7 @@ html {
 .hola-som-coolom {
     width: 75%;
     max-width: 1200px;
-    justify-self: center;
-    margin-top: 230px;
+margin: 230px auto 80px auto;
     padding: 80px 60px;
     display: flex;
     flex-direction: column;
