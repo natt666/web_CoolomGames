@@ -48,7 +48,7 @@
 
 .about-hero-content {
     max-width: 900px;
-    justify-self: center;
+    margin: 0 auto;
     background-color: #f7fdff;
     text-align: center;
     display: flex;
@@ -675,18 +675,11 @@
         background-size: 600px;
     }
 
-    .about-hero{
-        width: 60%;
-        gap: 20px;
-        box-shadow: 
-            0 0 0 10px rgba(247, 253, 255, 0.8),
-            0 0 0 20px rgba(247, 253, 255, 0.6),
-            0 0 0 30px rgba(247, 253, 255, 0.4);
-    }
 
     .about-hero h1{
         font-size: 30px;
     }
+
 
     .about-hero p {
         font-size: 13px;
