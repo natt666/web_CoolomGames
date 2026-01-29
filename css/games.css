@@ -337,7 +337,7 @@
     
     .games-list {
         gap: 80px;
-        width: 90%
+        margin: 0 auto; /* Esto la centraría */
     }
     
     .game-item {
@@ -420,7 +420,6 @@
     }
     .games-grid-section{
         margin: 50px auto;
-        justify-items: center;
     }
 
     .game-link{
