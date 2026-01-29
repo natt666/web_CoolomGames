@@ -351,8 +351,8 @@
 
 @media (max-width: 640px) {
     .games-hero::after{
-    background-size: 600px;
-}
+        background-size: 600px;
+    }
     .games-hero {
         padding: 60px 20px 50px;
     }

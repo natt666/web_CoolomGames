@@ -595,7 +595,7 @@
 }
 
 @media (max-width: 640px) {
-     .about-hero {
+    .about-hero {
         padding: 60px 20px 50px;
     }
     
@@ -676,7 +676,12 @@
     }
 
     .about-hero{
-        padding: 60px 20px 50px;
+        width: 60%;
+        gap: 20px;
+        box-shadow: 
+            0 0 0 10px rgba(247, 253, 255, 0.8),
+            0 0 0 20px rgba(247, 253, 255, 0.6),
+            0 0 0 30px rgba(247, 253, 255, 0.4);
     }
 
     .about-hero h1{
