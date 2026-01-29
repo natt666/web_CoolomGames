@@ -364,10 +364,12 @@
     .games-hero p {
         font-size: 16px;
     }
+
     .game-info-logo, 
     .game-link {
         align-self: center; 
     }
+
     .games-list {
         gap: 60px;
     }
@@ -382,6 +384,7 @@
     .game-info {
         text-align: center; /* Centra el texto de la descripción */
     }
+    
     .game-image-wrapper {
         height: 300px;
     }
@@ -424,6 +427,7 @@
     .game-info {
         gap: 15px;
     }
+
     .games-grid-section{
         margin: 50px auto;
     }
