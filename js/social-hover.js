@@ -1,4 +1,3 @@
-// Cambiar iconos de redes sociales en hover
 document.addEventListener('DOMContentLoaded', function() {
     const socialLinks = document.querySelectorAll('.xarxes-socials a');
     
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const originalSrc = img.src;
         const hoverSrc = originalSrc.replace('_white', '_black');
         
-        // Precargar imagen hover
         const preload = new Image();
         preload.src = hoverSrc;
         

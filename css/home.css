@@ -169,7 +169,7 @@ html {
 }
 
 .arrow-down span {
-        font-size: 45px; /* mismo tamaño real que tenías */
+        font-size: 45px;
     display: inline-block;
     transform: rotate(90deg) translateX(6px);
 }
@@ -747,7 +747,6 @@ margin: 230px auto 80px auto;
 }
 /* ======================== RESPONSIVE HOME ======================== */
 
-/* Tablets (1024px and below) */
 @media (max-width: 1024px) {
     .hero-char-left {
         margin-left: 300px;
@@ -785,7 +784,6 @@ margin: 230px auto 80px auto;
     }
 }
 
-/* Mobile Landscape & Small Tablets (768px and below) */
 @media (max-width: 768px) {
     .hero-image {
         height: 70vh;
@@ -796,7 +794,6 @@ margin: 230px auto 80px auto;
 
     }
 
-    /* Ocultar personajes laterales, mostrar solo Cain */
     .hero-char-left,
     .hero-char-right {
         display: none;
@@ -814,7 +811,6 @@ margin: 230px auto 80px auto;
         bottom: -35%;
     }
 
-    /* Botones en grid 2x2 */
     .hero-buttons {
         top: auto;
         bottom: 5%;
@@ -837,7 +833,6 @@ margin: 230px auto 80px auto;
         height: 20px;
     }
 
-    /* Arrow */
     .arrow-wrapper {
         bottom: 1%;
         left: 50%;
@@ -853,7 +848,6 @@ margin: 230px auto 80px auto;
         font-size: 30px;
     }
 
-    /* Hola som Coolom */
     .hola-som-coolom {
         width: 90%;
         margin-top: 150px;
@@ -879,7 +873,6 @@ margin: 230px auto 80px auto;
         padding: 14px 35px;
     }
 
-    /* Carrusel - OPTIMIZADO PARA MÓVIL */
     .div-games-carousel {
         padding: 40px 0;
         margin-top: 50px;
@@ -918,7 +911,6 @@ margin: 230px auto 80px auto;
             0 4px 15px rgba(0, 0, 0, 0.8);
     }
 
-    /* Blog section */
     .home-blog-section {
         width: 95%;
         margin: 60px auto;
@@ -934,7 +926,6 @@ margin: 230px auto 80px auto;
     }
 }
 
-/* Mobile Portrait (480px and below) */
 @media (max-width: 470px) {
     .hero-image {
         height: 60vh;
@@ -974,7 +965,6 @@ margin: 230px auto 80px auto;
         transform: rotate(90deg) translateX(4px);
     }
 
-    /* Hola som Coolom */
     .hola-som-coolom {
         justify-self: center;
         margin-top: 120px;
@@ -1000,7 +990,6 @@ margin: 230px auto 80px auto;
         padding: 12px 28px;
     }
 
-    /* Carrusel - MÁS COMPACTO */
     .div-games-carousel {
         padding: 30px 0;
         margin-top: 40px;
@@ -1033,7 +1022,6 @@ margin: 230px auto 80px auto;
         font-size: 20px;
     }
 
-    /* Blog section */
     .home-blog-grid {
         grid-template-columns: 1fr;
         max-width: 320px;
@@ -1071,7 +1059,6 @@ margin: 230px auto 80px auto;
     }
 }
 
-/* Very Small Mobile (360px and below) */
 @media (max-width: 400px) {
     .hero-image {
         height: 55vh;
@@ -1104,7 +1091,6 @@ margin: 230px auto 80px auto;
         font-size: 13px;
     }
 
-    /* Carrusel - EXTRA COMPACTO */
     .div-games-carousel {
         padding: 25px 0;
         margin-top: 35px;

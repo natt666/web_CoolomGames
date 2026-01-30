@@ -111,7 +111,7 @@ nav {
     height: 56px;
     z-index: 100;
     position: relative;
-    background-color: #0280ff; /* <-- AÑADE EL COLOR AQUÍ */
+    background-color: #0280ff;
 }
 
 .logo-nav {
@@ -356,7 +356,7 @@ footer {
     }
     .footer-links-container{
         width: 90px;
-        line-height: 1.7;      /* 1.5 vegades la mida de font */
+        line-height: 1.7;
         gap: 5px;
     }
 }
@@ -393,7 +393,6 @@ footer {
 
 /* -------------------------- RESPONSIVE GLOBAL -------------------------- */
 
-/* Tablets */
 @media (max-width: 1024px) {
     .navegador {
         padding: 0 30px 0 20px;
@@ -413,7 +412,6 @@ footer {
     }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .navegador {
         height: auto;

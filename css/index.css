@@ -1,4 +1,4 @@
-/* Contenidor principal */
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -7,19 +7,16 @@ main {
   padding: 40px 20px;
 }
 
-/* Card link */
 .card-link {
   display: inline-block;
   text-align: center;
 }
 
-/* Enllaços nets */
 .card-link a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Card container */
 .card-bg {
   position: relative;
   display: flex;
@@ -31,22 +28,20 @@ main {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Imatge */
+
 .card-bg img.card-img {
   width: 100%;
-  max-width: 363px;      /* Desktop max width */
-  height: auto;           /* Manté proporció */
+  max-width: 363px;
+  height: auto;
   display: block;
   border-radius: 20px;
 }
 
-/* Hover efecte */
 .card-bg:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 25px 60px rgba(0,0,0,0.7);
 }
 
-/* Text flotant */
 .card-floating-text {
   position: absolute;
   bottom: 5%;
@@ -62,12 +57,11 @@ main {
   pointer-events: none;
 }
 
-/* Colors de cada tag */
 .tag-web    { background:#033263; }
 .tag-store  { background: #6c560f; }
 .tag-itchio { background: #a1090a; }
 
-/* ---------------- Media Queries per mòbil ---------------- */
+
 @media (max-width: 768px) {
   main {
     flex-direction: column;
@@ -91,7 +85,7 @@ main {
 
   .card-floating-text {
   position: absolute;
-  bottom: 24%;
+  bottom: 22%;
   right: 47%;
   transform: rotate(-6deg);
   transform-origin: right bottom;

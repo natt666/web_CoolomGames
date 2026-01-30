@@ -98,7 +98,8 @@
 /* -------------------------- STORY TIMELINE -------------------------- */
 .story-section {
     width: 100%;
-    padding: 100px 40px;
+    margin: 100px auto 100px;
+    justify-items: center;
     position: relative;
     overflow: hidden;
 }
@@ -116,6 +117,7 @@
 
 .story-container {
     max-width: 1000px;
+    padding: 40px 40px 40px;
     position: relative;
 }
 
@@ -694,24 +696,22 @@
             0 0 0 40px rgba(247, 253, 255, 0.2);
     }
 
-    /* 2. Arreglo de la Sección Story (Timeline) */
     .story-section {
         padding: 30px 15px;
     }
 
 .story-container {
-        margin-left: 40px; /* Reduït per guanyar espai pel text */
+        margin-left: 40px;
         max-width: 95%;
         left: 0 !important;
     }
 
     .story-container::before {
-        left: 0; /* Línia enganxada a l'inici del container */
+        left: 0;
         transform: none;
     }
 
     .story-item {
-        /* Augmentem la primera columna perquè l'any es vegi sencer */
         grid-template-columns: 55px 1fr !important; 
         gap: 15px;
         margin-bottom: 30px;
@@ -721,14 +721,13 @@
     .story-item:nth-child(odd) .story-year,
     .story-item:nth-child(even) .story-year {
         grid-column: 1 !important;
-        font-size: 18px; /* Mida llegible per l'any */
+        font-size: 18px;
         justify-content: center;
         text-shadow: none;
     }
 
-    /* El punt de la línia: l'ajustem perquè quedi centrat amb la línia vertical */
     .story-year::after {
-        left: -28px !important; /* Ajustat manualment segons el margin-left */
+        left: -28px !important;
         width: 12px;
         height: 12px;
         right: auto !important;
@@ -737,7 +736,7 @@
     .story-item:nth-child(odd) .story-content,
     .story-item:nth-child(even) .story-content {
         grid-column: 2 !important;
-        max-width: 260px; /* Una mica més ample per aprofitar el mòbil */
+        max-width: 260px;
         padding: 15px;
         text-align: left;
     }
@@ -755,9 +754,8 @@
     }
 
 .team-grid {
-        /* Cambiamos a 2 columnas de igual tamaño */
         grid-template-columns: 1fr 1fr !important; 
-        gap: 15px; /* Espacio entre las tarjetas */
+        gap: 15px;
         padding: 0 5px;
     }
 
@@ -770,7 +768,7 @@
     }
 
     .team-info .team-name {
-        font-size: 16px; /* Texto más pequeño para evitar saltos de línea feos */
+        font-size: 16px;
     }
 
     .team-info .team-role, 
@@ -781,12 +779,10 @@
         padding: 10px;
     }
 
-
     .team-bio {
-        display: none; /* Opcional: ocultar la biografía en móvil para ahorrar espacio vertical */
+        display: none;
     }
 
-    /* Ajuste para la tarjeta vacía (placeholder) */
     .team-placeholder {
         font-size: 24px;
     }

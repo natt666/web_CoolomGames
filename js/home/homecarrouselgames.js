@@ -36,7 +36,6 @@ function createCarousel() {
     
     container.innerHTML = carouselHTML;
     
-    // Duplicar los juegos para el efecto infinito
     const extendedGames = [...games, ...games, ...games];
     const track = document.getElementById('carousel-track');
     
@@ -66,13 +65,10 @@ function initCarousel() {
     let currentIndex = games.length;
     const totalOriginal = games.length;
     
-    // Variables para swipe táctil
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
     let startTransform = 0;
-    
-    // Obtener el ancho correcto del slide incluyendo el gap
     const getSlideWidth = () => {
         const slideWidth = slides[0].offsetWidth;
         const computedStyle = window.getComputedStyle(carouselTrack);
@@ -94,7 +90,6 @@ function initCarousel() {
         currentIndex = index;
         updateCarousel(smooth);
         
-        // Resetear posición si llegamos a los clones
         if (currentIndex >= totalOriginal * 2) {
             setTimeout(() => {
                 currentIndex = totalOriginal;
@@ -108,19 +103,13 @@ function initCarousel() {
         }
     }
     
-    // Botón derecha
     rightArrow.addEventListener('click', () => {
         goToSlide(currentIndex + 1);
     });
-    
-    // Botón izquierda
     leftArrow.addEventListener('click', () => {
         goToSlide(currentIndex - 1);
     });
-    
-    // ==================== SWIPE TÁCTIL ====================
-    
-    // Touch Start
+  
     carouselContainer.addEventListener('touchstart', (e) => {
         isDragging = true;
         startX = e.touches[0].clientX;
@@ -128,7 +117,6 @@ function initCarousel() {
         carouselTrack.style.transition = 'none';
     }, { passive: true });
     
-    // Touch Move
     carouselContainer.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
         
@@ -139,43 +127,34 @@ function initCarousel() {
         carouselTrack.style.transform = `translateX(-${newTransform}px)`;
     }, { passive: true });
     
-    // Touch End
     carouselContainer.addEventListener('touchend', (e) => {
         if (!isDragging) return;
         
         isDragging = false;
         const diff = startX - currentX;
-        const threshold = getSlideWidth() * 0.2; // 20% del ancho para cambiar
+        const threshold = getSlideWidth() * 0.2;
         
         carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         
         if (Math.abs(diff) > threshold) {
             if (diff > 0) {
-                // Swipe izquierda - siguiente slide
                 goToSlide(currentIndex + 1);
             } else {
-                // Swipe derecha - slide anterior
                 goToSlide(currentIndex - 1);
             }
         } else {
-            // No alcanzó el threshold, volver a la posición actual
             updateCarousel(true);
         }
         
-        // Resetear después de un pequeño delay
         setTimeout(() => {
             startX = 0;
             currentX = 0;
         }, 100);
     });
     
-    // ==================== MOUSE DRAG (solo para desktop) ====================
-    
-    // Detectar si es dispositivo táctil
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     
     if (!isTouchDevice) {
-        // Solo habilitar mouse drag en desktop
         carouselContainer.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.clientX;
@@ -215,17 +194,14 @@ function initCarousel() {
                 updateCarousel(true);
             }
             
-            // Resetear después de un pequeño delay
             setTimeout(() => {
                 startX = 0;
                 currentX = 0;
             }, 100);
         });
         
-        // Prevenir que los links se activen durante el drag (solo desktop)
         slides.forEach(slide => {
             slide.addEventListener('click', (e) => {
-                // Solo prevenir si hubo un drag significativo
                 const dragDistance = Math.abs(startX - currentX);
                 if (isDragging || dragDistance > 10) {
                     e.preventDefault();
@@ -233,8 +209,6 @@ function initCarousel() {
             });
         });
     }
-    
-    // ==================== RESIZE ====================
     
     let resizeTimeout;
     window.addEventListener('resize', () => {
@@ -244,7 +218,6 @@ function initCarousel() {
         }, 100);
     });
     
-    // Inicializar
     updateCarousel(false);
 }
 

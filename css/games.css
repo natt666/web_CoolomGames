@@ -237,7 +237,7 @@
     background-size: 150px;
     background-position: center;
     opacity: 0.15;
-    z-index: -1;                 /* CLAVE */
+    z-index: -1;
     pointer-events: none;
 }
 
@@ -337,7 +337,7 @@
     
     .games-list {
         gap: 80px;
-        margin: 0 auto; /* Esto la centraría */
+        margin: 0 auto;
     }
     
     .game-item {
@@ -382,7 +382,7 @@
     }
     
     .game-info {
-        text-align: center; /* Centra el texto de la descripción */
+        text-align: center;
     }
     
     .game-image-wrapper {
@@ -423,7 +423,6 @@
         display: none;
     }
     
-    /* Opcional: Ajustar margen si el logo deja mucho espacio vacío */
     .game-info {
         gap: 15px;
     }

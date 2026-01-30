@@ -1,9 +1,8 @@
-// Configuración de juegos
 const gamesData = [
     {
         title: "Dating Killmulator",
         image: "resources/img/dating_killmulator/landing_page/dating_lp_img.png",
-        logo: "resources/img/dating_killmulator/logo/logo_blanc.png",
+        logo: "resources/img/dating_killmulator/logo/logo_blanc.svg",
         description: "A comedy dating sim about a serial killer, a popular guy, and a psychologist.",
         link: "https://coolom-games.itch.io/datingkillmulator",
         reverse: false
@@ -26,7 +25,6 @@ const gamesData = [
     }
 ];
 
-// Crear la lista de juegos
 function createGamesList() {
     const gamesListContainer = document.querySelector('.games-list');
     
@@ -35,10 +33,8 @@ function createGamesList() {
         return;
     }
     
-    // Limpiar contenedor
     gamesListContainer.innerHTML = '';
     
-    // Crear cada juego
     gamesData.forEach(game => {
         const gameItem = document.createElement('div');
         gameItem.className = 'game-item';
@@ -46,7 +42,6 @@ function createGamesList() {
             gameItem.classList.add('reverse');
         }
         
-        // Crear HTML del juego
         gameItem.innerHTML = `
             <div class="game-image-wrapper">
                 <img src="${game.image}" alt="${game.title}">
@@ -62,5 +57,4 @@ function createGamesList() {
     });
 }
 
-// Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', createGamesList);

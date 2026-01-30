@@ -1,5 +1,3 @@
-// Cargar artículos del blog en la home (3 en desktop, 2 en móvil)
-
 async function loadHomeBlogPosts() {
     try {
         const response = await fetch('resources/json/blog-articles.json');
@@ -16,10 +14,8 @@ async function loadHomeBlogPosts() {
             return dateB - dateA;
         });
         
-        // Determinar cuántos artículos mostrar según el ancho de pantalla
         updateArticleCount(blogArticles);
         
-        // Actualizar cuando se redimensiona la ventana
         window.addEventListener('resize', () => updateArticleCount(blogArticles));
         
     } catch (error) {
@@ -32,11 +28,11 @@ function updateArticleCount(blogArticles) {
     let articlesToShow;
     
     if (windowWidth <= 480) {
-        articlesToShow = 1; // Móvil pequeño: 1 artículo
+        articlesToShow = 1;
     } else if (windowWidth <= 768) {
-        articlesToShow = 2; // Tablet/móvil: 2 artículos
+        articlesToShow = 2;
     } else {
-        articlesToShow = 3; // Desktop: 3 artículos
+        articlesToShow = 3;
     }
     
     const latestArticles = blogArticles.slice(0, articlesToShow);

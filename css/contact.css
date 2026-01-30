@@ -222,6 +222,76 @@
     height: 16px;
 }
 
+.popup-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 75, 151, 0.6);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.popup-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #f7fdff;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 4px solid #e0efff;
+}
+
+.popup-overlay.active .popup-content {
+    transform: scale(1);
+}
+
+.popup-close-btn {
+    position: absolute; top: 15px; right: 20px;
+    background: none; border: none; font-size: 28px;
+    cursor: pointer; color: #0280ff; font-weight: bold;
+}
+
+.popup-icon {
+    font-size: 60px; margin-bottom: 20px;
+}
+
+#popup-title {
+    font-family: 'Lilita One', cursive;
+    font-size: 32px; color: #0280ff; margin-bottom: 15px;
+}
+
+#popup-message {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px; color: #555; margin-bottom: 30px;
+}
+
+#popup-ok-btn {
+    padding: 12px 35px;
+    background: #0280ff; color: white;
+    border: none; border-radius: 50px;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 20px; cursor: pointer;
+    box-shadow: 0 5px 15px rgba(2, 128, 255, 0.3);
+    transition: transform 0.2s;
+}
+
+#popup-ok-btn:hover {   
+    transform: translateY(-3px);
+}
+
 @media (max-width: 768px) {
     .contact-content-wrapper {
         grid-template-columns: 1fr;

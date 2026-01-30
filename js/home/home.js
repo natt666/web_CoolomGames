@@ -13,8 +13,8 @@ fetch('resources/json/carrousel_home_trailers.json')
 
       const video = document.createElement('video');
       video.src = item.path_video;
-      video.autoplay = index === 0; // solo el primero al cargar
-      video.loop = false; // queremos que avance al siguiente, no que se repita
+      video.autoplay = index === 0;
+      video.loop = false;
       video.muted = true;
       video.playsInline = true;
 
@@ -49,7 +49,6 @@ fetch('resources/json/carrousel_home_trailers.json')
       currentIndex = index;
     }
 
-    // Botones de navegación
     prev.addEventListener('click', () => {
       const newIndex = (currentIndex - 1 + total) % total;
       showSlide(newIndex);
@@ -60,7 +59,6 @@ fetch('resources/json/carrousel_home_trailers.json')
       showSlide(newIndex);
     });
 
-    // Al terminar el vídeo, pasar al siguiente
     slides.forEach((s, i) => {
       const video = s.querySelector('video');
       video.addEventListener('ended', () => {

@@ -1,14 +1,7 @@
-/* =========================================
-   ESTILS ESPECÍFICS DE MERCH
-   (El reset i el nav venen de global.css)
-   ========================================= */
-
-
-/* Contenidor Principal (Targeta Central) */
 .merch-container {
     width: 90%;
     max-width: 800px;
-    margin: 100px auto; /* Marge negatiu per integrar amb el banner/núvols */
+    margin: 100px auto;
     padding: 80px 40px;
     background-color: #f7fdff;
     border-radius: 40px;
@@ -41,7 +34,7 @@
     margin: 0;
 }
 
-/* Àrea del Botó */
+
 .store-cta {
     margin-top: 20px;
     width: 100%;
@@ -52,7 +45,7 @@
     background: linear-gradient(135deg, #0280ff 0%, #006ad5 100%);
     color: white;
     font-family: 'Lilita One', 'Times New Roman';
-    font-size: 28px; /* Més gran que els botons normals */
+    font-size: 28px;
     padding: 20px 60px;
     border-radius: 60px;
     text-decoration: none;
@@ -70,11 +63,10 @@
     border-color: #0280ff;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .merch-container {
         padding: 50px 20px;
-        margin-top: 40px; /* Reset del marge negatiu en mòbil si cal */
+        margin-top: 40px;
     }
 
     .merch-title {
